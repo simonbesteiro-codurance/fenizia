@@ -1,25 +1,56 @@
-import userList from '../user.mock';
-import dispatcher from '../appDispatcher';
-import actionTypes from './actionTypes';
+import userList from "../user.mock";
+import dispatcher from "../appDispatcher";
+import actionTypes from "./actionTypes";
 
-export function createUser() {
-	return new Promise((resolve) => {
-		resolve(userList);
-	}).then((user) => {
-		dispatcher.dispatch({
-			type: actionTypes.CREATE_USER,
-			data: user
-		});
-	});
+export function loadUsers() {
+  return new Promise((resolve) => {
+    resolve(userList);
+  }).then((users) => {
+    dispatcher.dispatch({
+      type: actionTypes.LOAD_USER,
+      data: users,
+    });
+  });
+}
+
+export function createUser(user) {
+  return new Promise((resolve) => {
+    const user = {
+      name: "Gema",
+      id: 4,
+    };
+
+    resolve(user);
+  }).then((user) => {
+    dispatcher.dispatch({
+      type: actionTypes.CREATE_USER,
+      data: user,
+    });
+  });
 }
 
 export function updateUser() {
-	return new Promise((resolve) => {
-		resolve(userList);
-	}).then((user) => {
-		dispatcher.dispatch({
-			type: actionTypes.CREATE_USER,
-			data: user
-		});
-	});
+  return new Promise((resolve) => {
+    const user = {
+      name: "Gemma",
+      id: 4,
+    };
+    resolve(user);
+  }).then((user) => {
+    dispatcher.dispatch({
+      type: actionTypes.UPDATE_USER,
+      data: user,
+    });
+  });
+}
+
+export function deleteUser() {
+  return new Promise((resolve) => {
+    resolve(user);
+  }).then((user) => {
+    dispatcher.dispatch({
+      type: actionTypes.DELETE_USER,
+      data: user,
+    });
+  });
 }
