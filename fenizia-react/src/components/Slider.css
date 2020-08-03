@@ -1,0 +1,139 @@
+
+  .slider {
+    height: 65vw;
+    background-color: white;
+    position: relative;
+  }
+  
+  .slider-text {
+    height: 10vh;
+    border: 2px yellow;
+    background-color: pink;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .slider-books {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 7px;
+  }
+  
+  .slider-books:after {
+    display: inline-block;
+    content: ">";
+    position: relative;
+    margin-left: 4px;
+  }
+  
+  .slider-view-all {
+    display: none;
+  }
+  
+  .slider-content {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .slider-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .list__item {
+    margin: 0 5px;
+    position: relative;
+  }
+  
+  
+  .artwork__image {
+    border: 4px solid transparent;
+    border-radius: 2px;
+    width: 40vw;
+  }
+  
+  .artwork__image:hover {
+    border: 4px solid pink;
+    border-radius: 2px;
+  }
+  
+  
+  @media screen and (min-width: 600px) {
+    .slider {
+      height: 50vw;
+    }
+  
+    .slider-books:after {
+      display: none;
+    }
+  
+    .slider-view-all {
+      display: block;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 7px;
+    }
+  
+    .slider-view-all:after {
+      display: inline-block;
+      content: ">";
+      position: relative;
+      margin-left: 4px;
+    }
+  
+    .artwork__image {
+      border: 4px solid transparent;
+      border-radius: 2px;
+      width: 30vw;
+    }
+  
+  
+  }
+  
+  @media screen and (min-width: 1024px) {
+    
+  
+    .slider {
+      height: 29vw;
+    }
+  
+    .artwork__image {
+      border: 4px solid transparent;
+      border-radius: 2px;
+      width: 15vw;
+    }
+  
+    .list__item__2:hover + .tooltip {
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      box-sizing: border-box;
+      outline: 0;
+      will-change: opacity;
+      border-radius: 8px;
+      position: absolute;
+      top: -8%;
+      right: initial;
+      left: 31%;
+      width: 470px;
+      height: 109%;
+      white-space: normal;
+      background-color: rgba(0, 0, 0, 0.8);
+      background-size: cover;
+      background-position: center center;
+      transition: opacity 0.2s ease;
+      z-index: 200;
+      opacity: 1;
+      display: block;
+      background-image: url("https://images-3.wuaki.tv/system/shots/199690/original/snapshot-1590667986-width480-quality30.jpeg");
+    }
+  
+  
+  }
+  
