@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+        /* position: fixed;
+        top: 0; */
+}
+
+.icon__hamburger,
+.icon__search,
+.icon__login,
+.icon__bag {
+    display: inline-block;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px;
+    /* background-color: lightcoral; */
+}
+
+.icon__hamburger {
+    background-image: url(../icons/hamburger.svg);
+    background-position: center;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+}
+
+.icon__logo {
+    display: inline-block;
+    flex-grow: 2;
+    background-image: url(../img/logo__fenizia.png);
+    background-position: center;   
+    background-repeat: no-repeat;
+    width: auto;
+    height: 60px;
+} 
+
+.icon__search {
+    background-image: url(../icons/search.svg);
+    background-position: center;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+}
+
+.icon__login{
+    background-image: url(../icons/login.svg);
+    background-position: center;
+    background-size: 1.7em;
+    background-repeat: no-repeat;
+}
+
+.icon__bag{
+    background-image: url(../icons/bag.svg);
+    background-position: center;
+    background-size: 1.75em;
+    background-repeat: no-repeat;
+}
+
