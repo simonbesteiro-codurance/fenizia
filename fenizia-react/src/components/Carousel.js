@@ -3,11 +3,6 @@ import "./Carousel.css";
 import CarouselImageGenerator from "./CarouselImageGenerator";
 function Carousel() {
   let i = 0;
-  useEffect(() => {
-    setInterval(() => {
-      i += 5;
-    });
-  });
   const arrayImage = [
     {
       source: "https://imagessl6.casadellibro.com/a/l/t5/46/9788420412146.jpg",
@@ -60,19 +55,40 @@ function Carousel() {
       price: 20,
     },
   ];
+  const renderizedArray = RenderArraySlice(arrayImage);
+  useEffect(() => {
+    setInterval(() => {
+      if (i === renderizedArray.length) i = 0;
+      else i++;
+    }, 5000);
+  });
   return (
     <div className="main-carousel">
-      <p>Sugerencia del dia</p>
-      {(arrayImage) => {
-        let resolve = "";
-        for (let i = 0; i < i + 5; i++) {
-          resolve += <CarouselImageGenerator image={arrayImage[i]} />;
-        }
-        console.log(resolve);
-        return resolve;
-      }}
+      {
+        //the i should change on the useEffect so the images changes
+      }
+      {renderizedArray[i].map((element) => {
+        return <CarouselImageGenerator image={element} />;
+      })}
     </div>
   );
+}
+function RenderArraySlice(arrayImage) {
+  let fiveProductArray = [];
+  for (let i = 0; i < arrayImage.length / 5; i++) {
+    fiveProductArray = [
+      ...fiveProductArray,
+      [
+        arrayImage[i],
+        arrayImage[i + 1],
+        arrayImage[i + 2],
+        arrayImage[i + 3],
+        arrayImage[i + 4],
+      ],
+    ];
+  }
+  console.log(fiveProductArray);
+  return fiveProductArray;
 }
 
 export default Carousel;

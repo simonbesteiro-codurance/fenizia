@@ -3,16 +3,10 @@
   height: 50vh;
   display: flex;
   flex-direction: row;
-  position: relative;
   justify-content: space-around;
   min-width: 1024px;
   overflow-x: auto;
 }
 .main-carousel::-webkit-scrollbar {
   display: none;
-}
-.main-carousel > p {
-  position: absolute;
-  margin: 5vh;
-  color: black;
 }
