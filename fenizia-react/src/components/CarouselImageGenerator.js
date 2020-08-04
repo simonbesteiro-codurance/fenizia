@@ -1,17 +1,17 @@
 import React from "react";
 import "./CarouselImageGenerator.css";
 
-function CarouselImageGenerator({ image }) {
+function CarouselImageGenerator({ products }) {
   return (
     <div className="main-carousel__render">
       <div className="main-carousel__render__image">
-        <img src={image.source} alt={image.title}></img>
+        <img src={products.product.cover} alt={products.product.title}></img>
       </div>
       <div className="main-carousel__render__text">
-        <p>{image.title}</p>
+        <p>{products.product.title}</p>
       </div>
       <div className="main-carousel__render__text">
-        <p>{image.price}€</p>
+        <button>Comprar por {products.product.price}€</button>
       </div>
     </div>
   );

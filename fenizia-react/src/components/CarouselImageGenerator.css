@@ -64,3 +64,13 @@
 .main-carousel__render__text {
   margin: 0.3vh;
 }
+.main-carousel__render__text > button {
+  border-style: none;
+  border: 2px transparent solid;
+  padding: 2vh;
+  color: black;
+  background-color: #ffcc00;
+}
+.main-carousel__render__text > button:hover {
+  border: 2px black solid;
+}
