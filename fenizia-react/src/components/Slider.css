@@ -1,5 +1,5 @@
 .slider {
-  height: 65vw;
+  height: 80vw;
   background-color: white;
   position: relative;
 }
@@ -7,7 +7,7 @@
 .slider__text {
   height: 2em;
   border: 2px yellow;
-  background-color: pink;
+  background-color: #FFCC00;
   color: white;
   display: flex;
   flex-direction: row;
@@ -56,13 +56,25 @@
 }
 
 .slider__image:hover {
-  border: 4px solid pink;
+  border: 4px solid #FFCC00;
   border-radius: 2px;
+}
+
+.slider__content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider__item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 5vw;
 }
 
 @media screen and (min-width: 600px) {
   .slider {
-    height: 50vw;
+    height: 60vw;
   }
 
   .slider__title:after {
@@ -92,7 +104,7 @@
 
 @media screen and (min-width: 1024px) {
   .slider {
-    height: 29vw;
+    height: 35vw;
   }
 
   .slider__image {
