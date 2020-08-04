@@ -1,7 +1,7 @@
 import React from "react";
 
 function HistorialDePedidos() {
-  return <p>Historila Works!</p>;
+  return <p>Historisa Works!</p>;
 }
 
 export default HistorialDePedidos;

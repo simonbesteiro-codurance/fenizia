@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HistorialDePedidos from "./HistorialDePedidos";
 import ListaDeFavoritos from "./ListaDeFavoritos";
 import ProductosEnVenta from "./ProductosEnVenta";
+import {} from "../userMock";
 
 import "./Profile.css";
 
