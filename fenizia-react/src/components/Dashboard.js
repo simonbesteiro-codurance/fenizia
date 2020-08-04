@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 function Dashboard() {
   return (
     <>
-      <Carousel />
+      {/* <Carousel /> */}
       <Slider order="newRelease" url="novedades" text="NOVEDADES" />
       <Slider order="bestSeller" url="mas-vendidos" text="MÁS VENDIDOS" />
     </>
