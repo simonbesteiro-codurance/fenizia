@@ -1,42 +1,46 @@
-import { EventEmitter } from 'events';
-import dispatcher from '../appDispatcher';
-import actionTypes from '../actions/actionTypes';
+import { EventEmitter } from "events";
+import dispatcher from "../appDispatcher";
+import actionTypes from "../actions/actionTypes";
 
-const CHANGE_EVENT = 'change';
+const CHANGE_EVENT = "change";
 let _product = [];
 
 class ProductStore extends EventEmitter {
-	addChangeListener(callback) {
-		this.on(CHANGE_EVENT, callback);
-	}
+  addChangeListener(callback) {
+    this.on(CHANGE_EVENT, callback);
+  }
 
-	removeChangeListener(callback) {
-		this.removeListener(CHANGE_EVENT, callback);
-	}
+  removeChangeListener(callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+  }
 
-	emitChange() {
-		this.emit(CHANGE_EVENT);
-	}
+  emitChange() {
+    this.emit(CHANGE_EVENT);
+  }
 
-	getProduct() {
-		return _product;
-	}
+  getProduct(criteria, value) {
+    if (!criteria) {
+      return _product;
+    } else {
+      return _product.filter((product) => product.product.type === criteria);
+    }
+  }
 
-	getProductById(id) {
-		return _product.find((product) => product.id === id);
-	}
+  getProductById(id) {
+    return _product.find((product) => product.id === id);
+  }
 }
 
 const productStore = new ProductStore();
 dispatcher.register((action) => {
-	switch (action.type) {
-		case actionTypes.LOAD_PRODUCTS:
-			_product = action.data;
-			productStore.emitChange(_product);
-			break;
-		default:
-			break;
-	}
+  switch (action.type) {
+    case actionTypes.LOAD_PRODUCTS:
+      _product = action.data;
+      productStore.emitChange(_product);
+      break;
+    default:
+      break;
+  }
 });
 
 export default productStore;
