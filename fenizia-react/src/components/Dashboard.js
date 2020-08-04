@@ -6,8 +6,8 @@ function Dashboard() {
   return (
     <>
       <Carousel />
-      <Slider order="book" />
-      <Slider order="notebook" />
+      <Slider order="newRelease" url="novedades" text="NOVEDADES" />
+      <Slider order="bestSeller" url="mas-vendidos" text="MÁS VENDIDOS" />
     </>
   );
 }

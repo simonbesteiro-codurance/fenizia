@@ -9,7 +9,7 @@ const productList = [
       rating: 9,
       cover: "https://imagessl8.casadellibro.com/a/l/t1/98/9788418038198.jpg",
       newRelease: true,
-      BestSeller: false
+      bestSeller: false
     }
     },
   {
@@ -22,7 +22,7 @@ const productList = [
       rating: 8.5,
       cover: "https://imagessl8.casadellibro.com/a/l/t1/98/9788418038198.jpg",
       newRelease: true,
-      BestSeller: false
+      bestSeller: false
     },
   },
   {
@@ -34,8 +34,8 @@ const productList = [
       price: 23.7,
       rating: 7.5,
       cover: "https://imagessl8.casadellibro.com/a/l/t1/38/9788466346238.jpg",
-      newRelease: true,
-      BestSeller: false
+      newRelease: false,
+      bestSeller: true
     },
   },
   {

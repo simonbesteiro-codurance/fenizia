@@ -18,11 +18,12 @@ class ProductStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-  getProduct(criteria, value) {
+  getProduct(criteria) {
+    debugger;
     if (!criteria) {
       return _product;
     } else {
-      return _product.filter((product) => product.product.type === criteria);
+      return _product.filter((product) => product.product[criteria] === true);
     }
   }
 

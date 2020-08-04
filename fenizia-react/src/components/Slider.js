@@ -4,7 +4,7 @@ import productStore from "../stores/productStore";
 import { loadProducts } from "../actions/productActions";
 import "./Slider.css";
 
-function Slider({ order }) {
+function Slider({ order, url, text }) {
   const [products, setProducts] = useState(productStore.getProduct(order));
 
   useEffect(() => {
@@ -24,10 +24,11 @@ function Slider({ order }) {
   return (
     <section className="slider">
       <div className="slider__text">
-        <Link to={"/novedades"}>
-          <p className="slider__title">LIBROS - Novedades</p>
+        
+        <Link to={url}>
+          <p className="slider__title">LIBROS - {text}</p>
         </Link>
-        <Link to={"/novedades"}>
+        <Link to={url}>
           <p className="slider__view-all">VER TODO</p>
         </Link>
       </div>
