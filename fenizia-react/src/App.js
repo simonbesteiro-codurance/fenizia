@@ -16,7 +16,7 @@ function App(props) {
 				<Route path="/heroes" component={HeroesPage} />
 				<Route component={PageNotFound} /> */}
 			</Switch>
-      <Footer />
+			<Footer />
 		</div>
 	);
 }
