@@ -30,6 +30,13 @@ class ProductStore extends EventEmitter {
   getProductById(id) {
     return _product.find((product) => product.id === id);
   }
+
+  getCarouselPage(page, step) {
+    const calculus = step * page;
+    if (_product && _product.length >= calculus) {
+      return _product.slice(calculus - step, calculus);
+    } else return _product.slice(_product.length - ++page, _product.length);
+  }
 }
 
 const productStore = new ProductStore();
@@ -38,6 +45,9 @@ dispatcher.register((action) => {
     case actionTypes.LOAD_PRODUCTS:
       _product = action.data;
       productStore.emitChange(_product);
+      break;
+    case actionTypes.NEXT_CAROUSEL:
+      productStore.emitChange();
       break;
     default:
       break;
