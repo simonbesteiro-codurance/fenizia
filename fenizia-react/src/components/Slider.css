@@ -19,6 +19,8 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 7px;
+  color: #fff;
+  
 }
 
 .slider__title:after {
@@ -86,6 +88,7 @@
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 7px;
+    color: #fff;
   }
 
   .slider__view-all:after {
