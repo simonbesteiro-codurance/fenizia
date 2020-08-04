@@ -210,4 +210,4 @@ const productList = [
 	}
 ];
 
-export default productList
+export default productList;

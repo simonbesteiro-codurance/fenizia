@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactPlayer from 'react-player';
-
+import './Cover.css'
 
 function Cover () {
     return (
         
-        <div>
+        <div className='video-cover'>
             <ReactPlayer
-                url='../video/video-cover.mp4'
-                className='video-cover'
-                playing
+                
+                url={require('../video/video-cover.mp4')}
+                playing='true'
                 width='100%'
                 height='100%'
             />
