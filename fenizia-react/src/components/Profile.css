@@ -1,0 +1,35 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+.profile-container__image {
+  width: 30vw;
+  margin: 5vw;
+}
+.profile-container__image > img {
+  width: 100%;
+}
+.profile-container__list__nav {
+  display: flex;
+  flex-direction: row;
+}
+.profile-container__list__nav p {
+  margin: 2vw;
+}
+.profile-container__list__nav a {
+  border: 0.1rem solid transparent;
+  background-color: #333;
+  color: #fff;
+  margin: 2vw;
+  text-decoration: none;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  border-radius: 0.3rem;
+}
+.profile-container__list__nav a:hover {
+  color: #fff;
+  background-color: #ffcc00;
+  border: 0.1rem solid #ffcc00;
+  text-decoration: none;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  border-radius: 0.3rem;
+}
