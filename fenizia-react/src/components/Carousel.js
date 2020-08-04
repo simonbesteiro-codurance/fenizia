@@ -19,7 +19,7 @@ function Carousel() {
     setInterval(() => {
       //Le falta esta variable necesito pasarla por las variablesde la funcion? no deberia leerlo del scope global?
       ++carouselPage;
-      console.log(products);
+
       setProducts(productStore.getCarouselPage(carouselPage, carouselStep));
     }, 5000);
 
