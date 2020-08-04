@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-box {
+    background-color: #f1f1f1;
+    border-radius: .3rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    display: flex;
+    width: 80%;
+}
+
+.box__contain {
+    display: flex;
+}
+
+.box__text {
+    width: 70%;
+    margin: 0 2rem;
+}
+
+.box__title {
+    margin-top: 1rem;
+}
+
+.box__author {
+    text-transform: uppercase;
+    color: #686868;
+    font-size: .8rem;
+}
+
+.box__sinopsis {
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.box__description {
+    color: #686868;
+    margin-top:.5rem;
+}
+
+.box__number-price {
+    font-size: 2rem;
+}
+
+.box__number-price span{
+    font-size: 1.5rem;
+}
+
+.box__vat {
+    color: #686868;
+    font-size: .7rem;
+}
+
+.box__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+.box__button-cart {
+    background-color: #ffcc00;
+    border: .1rem solid #ffcc00;
+    margin-top: 1rem;
+    width: 180px;
+    color: #fff;
+    text-decoration: none;
+    padding: .6rem .7rem .6rem 2rem;
+    border-radius: .3rem;
+    position: relative;
+}
+
+    .box__button-cart::before {
+            content: '';
+            display: inline-block;
+            background: url('../icons/bag.svg');
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            filter: invert(1);
+            left: .5rem;
+    }
+
+        .box__button-cart:hover {
+            background-color: #000;
+            border: .1rem solid #000;   
+        }
+
+
+.box__button-star {
+    background-color: #fff;
+    margin-top: .5rem;
+    width: 180px;
+    color: #000;
+    border: .1rem solid #ffcc00;
+    text-decoration: none;
+    padding: .6rem .7rem .6rem 2rem;
+    border-radius: .3rem;
+    position: relative;
+}
+
+    .box__button-star::before {
+        content: '';
+        display: inline-block;
+        background: url('../icons/star.svg');
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: .5rem;
+    }
+
+        .box__button-star:hover {
+            background-color: #ffcc00;
+            color: #fff;
+        }
+
+        .box__button-star:hover::before {
+            filter: invert(1);
+        }
