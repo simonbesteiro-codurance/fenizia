@@ -6,7 +6,7 @@ import { loadProducts, NextCarousel } from "../actions/productActions";
 
 function Carousel() {
   let carouselPage = 0;
-  const carouselStep = 3;
+  const carouselStep = 5;
 
   const [products, setProducts] = useState(
     productStore.getCarouselPage(carouselPage, carouselStep)
@@ -20,7 +20,7 @@ function Carousel() {
       //Le falta esta variable necesito pasarla por las variablesde la funcion? no deberia leerlo del scope global?
       ++carouselPage;
       console.log(products);
-      productStore.getCarouselPage(carouselPage, carouselStep);
+      setProducts(productStore.getCarouselPage(carouselPage, carouselStep));
     }, 5000);
 
     return () => productStore.removeChangeListener(onChange);

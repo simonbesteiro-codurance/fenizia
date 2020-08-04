@@ -25,11 +25,12 @@ class ProductStore extends EventEmitter {
   getProductById(id) {
     return _product.find((product) => product.id === id);
   }
+
   getCarouselPage(page, step) {
     const calculus = step * page;
     if (_product && _product.length >= calculus) {
       return _product.slice(calculus - step, calculus);
-    } else return _product.slice(_product.length - page, _product.length);
+    } else return _product.slice(_product.length - ++page, _product.length);
   }
 }
 

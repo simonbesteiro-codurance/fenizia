@@ -1,45 +1,45 @@
 @keyframes flickerAnimation {
   0% {
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-o-keyframes flickerAnimation {
   0% {
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-moz-keyframes flickerAnimation {
   0% {
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes flickerAnimation {
   0% {
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .main-carousel__render {
@@ -47,7 +47,7 @@
   -moz-animation: flickerAnimation 5s infinite;
   -o-animation: flickerAnimation 5s infinite;
   animation: flickerAnimation 5s infinite;
-
+  border: 2px transparent solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,11 +66,10 @@
 }
 .main-carousel__render__text > button {
   border-style: none;
-  border: 2px transparent solid;
   padding: 2vh;
   color: black;
   background-color: #ffcc00;
 }
-.main-carousel__render__text > button:hover {
+.main-carousel__render:hover {
   border: 2px black solid;
 }
