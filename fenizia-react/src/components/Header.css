@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 .main-nav {
     display: flex;
     align-items: center;
@@ -36,11 +38,12 @@
 .icon__logo {
     display: inline-block;
     flex-grow: 2;
-    background-image: url(../img/logo__fenizia.png);
+    background-image: url(../img/logo__fenizia.svg); 
     background-position: center;   
     background-repeat: no-repeat;
-    width: auto;
+    width: 150px;
     height: 60px;
+    margin-left: 3rem;
 } 
 
 .icon__search {
@@ -62,5 +65,63 @@
     background-position: center;
     background-size: 1.75em;
     background-repeat: no-repeat;
+    margin-right: 3rem;
 }
 
+.icon__red {
+    background-color: brown;
+    padding: 3rem;
+}
+
+/* Display None */
+
+.main-nav-text,
+.input__search {
+    display: none;
+}
+
+/* QUERIES */
+
+@media screen and (min-width: 990px) {
+    .main-nav-text {
+        display: flex;
+        flex-grow: 2;
+        justify-content: space-evenly;
+    }
+
+    .main-nav-text a {
+        text-decoration: none;
+        color: black;
+        font-size: .9rem;
+    }
+
+        .main-nav-text a:hover {
+            color: #ffcc00;
+        }
+
+    .icon__logo {
+        flex-grow: 0;
+    } 
+
+    .input__search {
+        display: flex;
+        width: 180px;        
+        padding: .6rem;
+        border: .05rem solid black;
+        border-radius: .3rem;
+    }
+
+
+    /* Display None */
+    .icon__hamburger {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 1150px) {
+    .input__search {
+        width: 280px;          
+    }
+}
