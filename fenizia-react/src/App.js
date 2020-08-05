@@ -6,7 +6,8 @@ import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
-import News from "./components/News";
+import ProductList from "./components/ProductList";
+
 
 function App(props) {
   return (
@@ -17,11 +18,9 @@ function App(props) {
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />
           <Route path="/login" exact component={Login} />
-          <Route path="/novedades" exact component={News} />
-          {/* <Route path="/hero/:heroId" component={FeniziaDetail} />
-				<Route path="/hero" component={HeroDetail} />
-				<Route path="/heroes" component={HeroesPage} />
-				<Route component={PageNotFound} /> */}
+		  <Route path="/novedades" exact component={ProductList} />
+		  <Route path="/cart" exact component={Cart} />
+         	<Route component={PageNotFound} />
         </Switch>
       </div>
       <Footer />
