@@ -25,6 +25,7 @@ function Profile() {
       <div className="profile-container__list">
         <div className="profile-container__list__nav">
           <a
+            href="/profile"
             onClick={(event) => {
               event.preventDefault();
               setShowList(<HistorialDePedidos />);
@@ -33,6 +34,7 @@ function Profile() {
             <p>Historial de Pedidos</p>
           </a>
           <a
+            href="/profile"
             onClick={(event) => {
               event.preventDefault();
               setShowList(<ListaDeFavoritos />);
@@ -41,6 +43,7 @@ function Profile() {
             <p>Lista de favoritos</p>
           </a>
           <a
+            href="/profile"
             onClick={(event) => {
               event.preventDefault();
               setShowList(<ProductosEnVenta />);

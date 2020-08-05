@@ -3,7 +3,7 @@ import actionTypes from "./actionTypes";
 import { authMethods } from "../firebase/firebaseAuthMethods";
 
 export function login(email, password) {
-  return authMethods
+  /*return authMethods
     .signin(email, password)
     .then(({ user }) => {
       dispatcher.dispatch({
@@ -11,13 +11,13 @@ export function login(email, password) {
         data: user,
       });
     })
-    .catch((error) => console.log(error));
-  /*return authMethods.signInWithGoogle().then(({ user }) => {
+    .catch((error) => console.log(error));*/
+  return authMethods.signInWithGoogle().then(({ user }) => {
     dispatcher.dispatch({
       type: actionTypes.LOGIN,
       user,
     });
-  });*/
+  });
 }
 
 export function logout() {
