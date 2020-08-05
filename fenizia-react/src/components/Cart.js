@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import cartStore from "../stores/cartStore";
-import { loadCart } from "../actions/cartActions";
+import userStore from "../stores/userStore";
+import productStore from "../stores/productStore";
+import { loadCart } from "../actions/userActions";
 import "./Cart.css";
 
-function Cart() {
-  const [cart, setCart] = useState(cartStore.getCart());
+function Cart(id) {
+  const [cart, setCart] = useState(productStore.getCart(1));
 
   useEffect(() => {
-    cartStore.addChangeListener(onChange);
+    userStore.addChangeListener(onChange);
     if (cart.length === 0) loadCart();
-    return () => cartStore.removeChangeListener(onChange);
+    return () => userStore.removeChangeListener(onChange);
   }, [cart.length]);
 
   function onChange() {
-    setCart(cartStore.getCart());
+    setCart(userStore.getCart());
   }
 
 

@@ -30,19 +30,19 @@ class UserStore extends EventEmitter {
 const userStore = new UserStore();
 dispatcher.register((action) => {
   switch (action.type) {
-    case actionTypes.LOAD_USERS:
+    case actionTypes.LOAD_USER:
       _user = action.data;
       userStore.emitChange(_user);
       break;
-    case actionTypes.CREATE_USERS:
+    case actionTypes.CREATE_USER:
       _user = [..._user, action.data];
       userStore.emitChange();
       break;
-    case actionTypes.UPDATE_USERS:
+    case actionTypes.UPDATE_USER:
       _user = action.data;
       userStore.emitChange(_user);
       break;
-    case actionTypes.DELETE_USERS:
+    case actionTypes.DELETE_USER:
       _user = action.data;
       userStore.emitChange(_user);
       break;
@@ -51,4 +51,4 @@ dispatcher.register((action) => {
   }
 });
 
-export default productStore;
+export default userStore;
