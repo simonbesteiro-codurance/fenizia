@@ -3,19 +3,24 @@ import HistorialDePedidos from "./HistorialDePedidos";
 import ListaDeFavoritos from "./ListaDeFavoritos";
 import ProductosEnVenta from "./ProductosEnVenta";
 import {} from "../userMock";
-
+import userList from "../userMock";
 import "./Profile.css";
 
 function Profile() {
   const [showList, setShowList] = useState(<HistorialDePedidos />);
-
+  let loadedUser = 11;
   return (
     <div className="profile-container">
       <div className="profile-container__image">
-        <img
-          src="https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png"
-          alt="profile image"
-        />
+        <div className="profile-container__image__file">
+          <img
+            src={userList[loadedUser].photo}
+            alt={userList[loadedUser].name}
+          />
+        </div>
+        <div className="profile-container__image__text">
+          <p>{userList[loadedUser].name}</p>
+        </div>
       </div>
       <div className="profile-container__list">
         <div className="profile-container__list__nav">
