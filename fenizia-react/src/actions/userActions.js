@@ -20,7 +20,7 @@ export function createUser(user) {
       id: 4,
     };
 
-    resolve(user);
+    resolve(userList);
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.CREATE_USER,
@@ -35,7 +35,7 @@ export function updateUser() {
       name: "Gemma",
       id: 4,
     };
-    resolve(user);
+    resolve(userList);
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.UPDATE_USER,
@@ -46,11 +46,22 @@ export function updateUser() {
 
 export function deleteUser() {
   return new Promise((resolve) => {
-    resolve(user);
+    resolve(userList);
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.DELETE_USER,
-      data: user,
+      data: user
+    });
+  });
+}
+
+export function loadCart() {
+  return new Promise((resolve) => {
+    resolve(userList);
+  }).then((user) => {
+    dispatcher.dispatch({
+      type: actionTypes.LOAD_USER,
+      data: user
     });
   });
 }
