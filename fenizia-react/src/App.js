@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import News from "./components/News";
+import Cart from "./components/Cart";
 
 function App(props) {
   return (
@@ -17,6 +18,7 @@ function App(props) {
 				<Route path="/" exact component={Dashboard} />
 				<Route path="/profile" exact component={Profile} />
 				<Route path="/novedades" exact component={News} />
+				<Route path="/cart" exact component={Cart} />
 				{/* <Route path="/hero/:heroId" component={FeniziaDetail} />
 				<Route path="/hero" component={HeroDetail} />
 				<Route path="/heroes" component={HeroesPage} />

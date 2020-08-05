@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import HistorialDePedidos from "./HistorialDePedidos";
 import ListaDeFavoritos from "./ListaDeFavoritos";
 import ProductosEnVenta from "./ProductosEnVenta";
-import {} from "../userMock";
-import userList from "../userMock";
+import {} from "../user.mock";
+import userList from "../user.mock";
 import "./Profile.css";
 
 function Profile() {
@@ -46,7 +46,7 @@ function Profile() {
               setShowList(<ProductosEnVenta />);
             }}
           >
-            <p>Prductos en venta</p>
+            <p>Productos en venta</p>
           </a>
         </div>
         <div className="profile-container__list__render">{showList}</div>
