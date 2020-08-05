@@ -20,18 +20,20 @@
   margin-right: 5px;
   margin-bottom: 7px;
   color: #fff;
+  text-decoration-line: none;
   
 }
 
-.slider__title:after {
+/* .slider__title:after {
   display: inline-block;
   content: ">";
   position: relative;
   margin-left: 4px;
-}
+} */
 
 .slider__view-all {
   display: none;
+  text-decoration-line: none;
 }
 
 .slider__content {
@@ -91,12 +93,12 @@
     color: #fff;
   }
 
-  .slider__view-all:after {
+  /* .slider__view-all:after {
     display: inline-block;
     content: ">";
     position: relative;
     margin-left: 4px;
-  }
+  } */
 
   .slider__image {
     border: 4px solid transparent;

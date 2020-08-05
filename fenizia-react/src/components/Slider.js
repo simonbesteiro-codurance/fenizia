@@ -25,11 +25,11 @@ function Slider({ order, url, text }) {
     <section className="slider">
       <div className="slider__text">
         
-        <Link to={url}>
-          <p className="slider__title">LIBROS - {text}</p>
+        <Link className="slider__title" to={url}>
+          <p>LIBROS - {text}</p>
         </Link>
-        <Link to={url}>
-          <p className="slider__view-all">VER TODO</p>
+        <Link className="slider__view-all" to={url}>
+          <p>VER TODO</p>
         </Link>
       </div>
       <div className="slider__content">
