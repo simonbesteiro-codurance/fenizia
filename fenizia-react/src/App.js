@@ -15,6 +15,7 @@ function App(props) {
   return (
 		<div className="container">
 			<Header />
+			<div className="margin-top">
 			<Switch>
 				<Route path="/" exact component={Dashboard} />
 				<Route path="/novedades" exact component={News} />
@@ -23,6 +24,7 @@ function App(props) {
 				<Route path="/heroes" component={HeroesPage} />
 				<Route component={PageNotFound} /> */}
 			</Switch>
+			</div>
 			<Footer />
 		</div>
 	);
