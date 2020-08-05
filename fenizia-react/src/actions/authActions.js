@@ -8,7 +8,7 @@ export function login(email, password) {
   //   .then(({ user }) => {
   //     dispatcher.dispatch({
   //       type: actionTypes.LOGIN,
-  //       data: user,
+  //       user
   //     });
   //   })
   //   .catch((error) => console.log(error));
