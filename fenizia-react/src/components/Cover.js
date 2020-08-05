@@ -5,7 +5,7 @@ function Cover () {
     return (
         
         <div className='img__contain'>
-            <img className='img__cover' src={require('../img/img-cover.jpg')} alt="Books Image"/>
+            <img className='img__cover' src={require('../img/img-cover.jpg')} alt="Bookstore"/>
             <p className='img__title'>Leer nos hace libres</p>
         </div>
     )

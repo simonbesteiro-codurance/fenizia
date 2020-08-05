@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import ProductList from "./components/ProductList";
-import productList from "./product.mock";
+
 
 function App(props) {
   return (
