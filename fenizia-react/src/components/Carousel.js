@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import CarouselImageGenerator from "./CarouselImageGenerator";
 import productStore from "../stores/productStore";
-import { loadProducts, NextCarousel } from "../actions/productActions";
+import { loadProducts } from "../actions/productActions";
 
 function Carousel() {
   let carouselPage = 0;

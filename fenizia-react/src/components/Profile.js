@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HistorialDePedidos from "./HistorialDePedidos";
 import ListaDeFavoritos from "./ListaDeFavoritos";
 import ProductosEnVenta from "./ProductosEnVenta";
