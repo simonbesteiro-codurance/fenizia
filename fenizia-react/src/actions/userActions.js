@@ -15,11 +15,6 @@ export function loadUsers() {
 
 export function createUser(user) {
   return new Promise((resolve) => {
-    const user = {
-      name: "Gema",
-      id: 4,
-    };
-
     resolve(userList);
   }).then((user) => {
     dispatcher.dispatch({
@@ -31,10 +26,6 @@ export function createUser(user) {
 
 export function updateUser() {
   return new Promise((resolve) => {
-    const user = {
-      name: "Gemma",
-      id: 4,
-    };
     resolve(userList);
   }).then((user) => {
     dispatcher.dispatch({
@@ -50,7 +41,7 @@ export function deleteUser() {
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.DELETE_USER,
-      data: user
+      data: user,
     });
   });
 }
@@ -61,7 +52,7 @@ export function loadCart() {
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.LOAD_USER,
-      data: user
+      data: user,
     });
   });
 }

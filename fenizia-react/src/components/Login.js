@@ -4,7 +4,7 @@ import { login, logout } from "../actions/authActions";
 import authStore from "../stores/authStore";
 
 function Login() {
-  const email = "pepe@gmail.com";
+  const email = "simonbesteiro@gmail.com";
   const password = "123456";
 
   const [isLogged, setIsLogged] = useState(authStore.isLogged());
@@ -58,7 +58,6 @@ function Login() {
             <div className="login-wrap__form__btn">
               <p> Welcome {user && user.email}</p>
               <button onClick={() => logout()}>Logout</button>
-               <img src={user && user.photoURL} />
             </div>
           )}
 
