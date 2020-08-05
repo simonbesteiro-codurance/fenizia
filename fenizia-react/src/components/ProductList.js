@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadProducts } from "../actions/productActions";
 import productStore from '../stores/productStore';
-import NewsList from './NewsList'
+import NewsList from './ProductListItem'
 
 
 function News() {
@@ -22,6 +22,7 @@ function News() {
             <>
                 {products.map((product) => (
                     <NewsList 
+                        key={product.id}
                         title={product.product.title}
                         author={product.product.author}
                         price={product.product.price}

@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
-import News from "./components/News";
+import News from "./components/ProductList";
 
 function App(props) {
   return (

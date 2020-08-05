@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./NewsList.css"
+import "./ProductListItem.css"
 
 
 const NewsList = ({ title, author, price, cover, description }) => (
