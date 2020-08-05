@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { loadProducts } from "../actions/productActions";
 import productStore from '../stores/productStore';
-import NewsList from './NewsList'
+import ProductListItem from './ProductListItem'
 
 
-function News() {
+function ProductList() {
     const [products, setProducts] = useState(productStore.getProduct());
 
     useEffect(() => {
@@ -21,7 +21,8 @@ function News() {
       return (
             <>
                 {products.map((product) => (
-                    <NewsList 
+                    <ProductListItem 
+                        key={product.id}
                         title={product.product.title}
                         author={product.product.author}
                         price={product.product.price}
@@ -33,4 +34,4 @@ function News() {
         );
     }
 
-export default News;
+export default ProductList;

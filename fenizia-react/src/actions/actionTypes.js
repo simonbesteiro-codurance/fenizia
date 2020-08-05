@@ -7,4 +7,5 @@ export default {
   NEXT_CAROUSEL: "NEXT_CAROUSEL",
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
-};
+}
+  
