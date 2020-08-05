@@ -4,8 +4,8 @@ import './Cover.css'
 function Cover () {
     return (
         
-        <div className='img__cover'>
-            <img src={require('../img/img-cover.jpg')} alt=""/>
+        <div className='img__contain'>
+            <img className='img__cover' src={require('../img/img-cover.jpg')} alt="Books Image"/>
             <p className='img__title'>Leer nos hace libres</p>
         </div>
     )

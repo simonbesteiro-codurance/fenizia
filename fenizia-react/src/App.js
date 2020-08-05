@@ -5,9 +5,9 @@ import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
-import News from "./components/ProductList";
 import Login from "./components/Login";
-import News from "./components/News";
+import ProductList from "./components/ProductList";
+import productList from "./product.mock";
 
 function App(props) {
   return (
@@ -18,7 +18,7 @@ function App(props) {
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />
           <Route path="/login" exact component={Login} />
-          <Route path="/novedades" exact component={News} />
+          <Route path="/novedades" exact component={ProductList} />
           {/* <Route path="/hero/:heroId" component={FeniziaDetail} />
 				<Route path="/hero" component={HeroDetail} />
 				<Route path="/heroes" component={HeroesPage} />
