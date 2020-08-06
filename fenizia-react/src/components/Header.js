@@ -4,13 +4,31 @@ import "./Header.css";
 import TextInput from "./TextInput";
 
 function Header() {
-  const [productName, setProductName] = useState("");
+  const [productName, setProductName] = useState('');
+  const [showForm, setShowForm] = useState(false);
 
   function onFieldChange(value, setValue) {
     setValue(value);
   }
 
+  function handleClick() {
+    setShowForm(true);
+  }
+
   return (
+    <>
+    {/* {
+    searchForm = showForm ? (
+      <TextInput
+      name="products"
+      value={productName}
+      placeholder="¿Qué quieres buscar?"
+      onChange={(event) => onFieldChange(event.target.value, setProductName)}
+    />
+
+    ) : 'Meck!';
+    } */}
+
     <section className="main-nav">
       <Link to="/" className="icon__hamburger"></Link>
 
@@ -23,19 +41,15 @@ function Header() {
         <Link to="/contacto">CONTACTO</Link>
       </div>
 
-      <TextInput
-        name="products"
-        value={productName}
-        placeholder="¿Qué quieres buscar?"
-        onChange={(event) => onFieldChange(event.target.value, setProductName)}
-      />
-
-      <Link to="/" className="icon__search"></Link>
+        {/* {searchForm} */}
+     
+      <Link to={handleClick} className="icon__search"></Link>
 
       <Link to="/profile" className="icon__login"></Link>
 
       <Link to="/" className="icon__bag"></Link>
     </section>
+    </>
   );
 }
 

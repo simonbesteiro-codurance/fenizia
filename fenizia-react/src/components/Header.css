@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 .main-nav {
     background-color: #fff;
     display: flex;
@@ -76,10 +74,21 @@
     padding: 3rem;
 }
 
+
+/* Search input */
+
+
+.input__search {
+    display: flex;
+    width: 180px;        
+    padding: .6rem;
+    border: .05rem solid black;
+    border-radius: .3rem;
+}
+
 /* Display None */
 
-.main-nav-text,
-.input__search {
+.main-nav-text {
     display: none;
 }
 
