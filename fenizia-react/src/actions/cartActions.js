@@ -17,6 +17,11 @@ export function removeProduct(id) {
   dispatcher.dispatch({
     type: actionTypes.DELETE_CART_ITEM
   });
+
+  export function addNumberCart() {
+    dispatcher.dispatch({
+      type: actionTypes.ADD_NUMBER_CART
+    });
 }
 
 
