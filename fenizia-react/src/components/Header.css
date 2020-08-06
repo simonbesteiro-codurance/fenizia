@@ -50,8 +50,8 @@
     display: none;
 }
 
-.novelas,
-.infantil {
+.novels,
+.childish {
     color: #000;
     font-size: 1.1rem;
     text-decoration: none;
@@ -59,11 +59,11 @@
 }
 
     
-    .novelas:hover {
+    .novels:hover {
         color: #ffcc00;
     }
 
-    .infantil:hover {
+    .childish:hover {
         color: #ffcc00;
     }
 
@@ -170,10 +170,17 @@
 
     .menu__products {
         position: absolute;
-        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
         width: 200px;
         height: auto;
         padding: .5rem;
+        display: none;
+    }
+
+    .categories:hover .menu__products {
+        display: flex;
     }
 
 
