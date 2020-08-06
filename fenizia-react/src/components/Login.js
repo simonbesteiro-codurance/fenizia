@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./Login.css";
 import { login, logout } from "../actions/authActions";
 import authStore from "../stores/authStore";
+import Profile from "./Profile";
 
 function Login() {
-  const email = "pepe@gmail.com";
+  const email = "simonbesteiro@gmail.com";
   const password = "123456";
 
   const [isLogged, setIsLogged] = useState(authStore.isLogged());
@@ -70,14 +71,42 @@ function Login() {
     // </div>
 
     <>
-        {!isLogged && (
-			<button onClick={() => login(email, password)}>Login</button>
-        )}
-        {isLogged && 
-            <button onClick={() =>logout()}>Logout</button>}
-            <img src={user && user.photoURL} />
-            <p>{user && user.email}</p>
-		</>
+      {!isLogged && (
+        <>
+          <span>Log in</span>
+
+          <div data-validate="Enter username">
+            <input type="text" name="username" placeholder="Username" />
+            <span data-placeholder=""></span>
+          </div>
+
+          <div data-validate="Enter password">
+            <input type="password" name="pass" placeholder="Password" />
+            <span data-placeholder=""></span>
+          </div>
+
+          <div>
+            <input type="checkbox" name="remember-me" />
+            <label>Remember me</label>
+          </div>
+
+          <div className="login-wrap__form__btn">
+            <button onClick={() => login(email, password)}>Login</button>
+          </div>
+        </>
+      )}
+      {/* {!isLogged && (
+        //<button onClick={() => login(email, password)}>Login</button>
+      )}  */}
+      {isLogged && (
+        <>
+          <Profile />
+          <button onClick={() => logout()}>Logout</button>
+        </>
+      )}
+      <img src={user && user.photoURL} />
+      <p>{user && user.email}</p>
+    </>
   );
 }
 
