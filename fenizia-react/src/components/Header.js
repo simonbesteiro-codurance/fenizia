@@ -59,7 +59,7 @@ function Header() {
      
       <Link to={handleClick} className="icon__search"></Link>
 
-      <Link to="/profile" className="icon__login"></Link>
+      <Link to="/login" className="icon__login"></Link>
 
       <Link to="/" className="icon__bag"></Link>
     </section>
