@@ -45,14 +45,3 @@ export function deleteUser() {
     });
   });
 }
-
-export function loadCart() {
-  return new Promise((resolve) => {
-    resolve(userList);
-  }).then((user) => {
-    dispatcher.dispatch({
-      type: actionTypes.LOAD_USER,
-      data: user,
-    });
-  });
-}
