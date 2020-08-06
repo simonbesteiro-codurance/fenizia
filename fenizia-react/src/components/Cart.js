@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import userStore from "../stores/userStore";
 import productStore from "../stores/productStore";
+import { loadCart } from "../actions/userActions";
+import authStore from "../stores/authStore"
+import cartStore from "../stores/cartStore"
 import { loadCart } from "../actions/cartActions";
-import authStore from "../stores/authStore";
-import cartStore from "../stores/cartStore";
+
 import "./Cart.css";
 
 function Cart() {
   const [user, setUser] = useState(authStore.getUserProfile());
   const [product, setProduct] = useState(productStore.getProduct());
   const [cart, setCart] = useState(cartStore.getCart(product));
+  const [product, setProduct] = useState(productStore.getProductById(cart));
+  
 
   useEffect(() => {
     authStore.addChangeListener(onChange);
