@@ -24,7 +24,7 @@ function Profile() {
           />
         </div>
         <div className="profile-container__image__text">
-          <p>{!!user.displayName ? user.displayName : "USUARIO"}</p>
+          <p>{!!user.displayName ? user.displayName : user.mail}</p>
         </div>
       </div>
       <div className="profile-container__list">

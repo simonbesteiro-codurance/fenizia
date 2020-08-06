@@ -30,3 +30,14 @@ export function loginWithGoogle() {
     });
   });
 }
+
+export function signIn(email, password) {
+  return authMethods
+    .createUser(email, password)
+    .then(() => {
+      dispatcher.dispatch({
+        type: actionTypes.SIGN_IN,
+      });
+    })
+    .catch((error) => console.log(error));
+}
