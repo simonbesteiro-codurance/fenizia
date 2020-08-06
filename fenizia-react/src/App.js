@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import Login from "./components/Login";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
+import Register from "./components/Register";
 
 function App(props) {
   return (
@@ -21,6 +22,7 @@ function App(props) {
           <Route path="/novedades" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList} />
           <Route path="/cart" exact component={Cart} />
+          <Route path="/register" exact component={Register} />
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>

@@ -13,4 +13,7 @@ export const authMethods = {
     provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
     return firebase.auth().signInWithPopup(provider);
   },
+  createUser: (email, password) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password);
+  },
 };
