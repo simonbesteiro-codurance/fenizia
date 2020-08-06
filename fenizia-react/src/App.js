@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import ProductList from "./components/ProductList";
 import ProductListParent from "./components/ProductListParent";
 import Cart from "./components/Cart";
+import Register from "./components/Register";
 
 
 function App(props) {
@@ -30,6 +31,7 @@ function App(props) {
           <Route path="/poesia" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
           <Route path="/cart" exact component={Cart} />
+          <Route path="/register" exact component={Register} />
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>

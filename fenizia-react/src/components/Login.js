@@ -68,10 +68,13 @@ function Login() {
 
                 <div className="login-wrap__form__btn">
                   <button onClick={() => login(email, password)}>Login</button>
+                  <a href="/register">
+                    <p>Sign in</p>
+                  </a>
                   <img
-                    src="https://www.drupal.org/files/issues/2020-01-26/google_logo.png"
+                    src="https://icon-library.com/images/login-with-google-icon/login-with-google-icon-3.jpg"
                     onClick={() => loginWithGoogle(email, password)}
-                    alt="Sign in with google"
+                    alt="Log in with google"
                   ></img>
                 </div>
               </div>
