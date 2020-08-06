@@ -1,12 +1,11 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import productStore from "./productStore";
 
 const CHANGE_EVENT = "change";
 let _cart = [
   {
-    amount: 5,
+    amount: 7,
     product: {
       id: 5,
       product: {
