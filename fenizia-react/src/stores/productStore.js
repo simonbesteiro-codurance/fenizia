@@ -19,7 +19,6 @@ class ProductStore extends EventEmitter {
   }
 
   getProduct(criteria) {
-    debugger;
     if (!criteria) {
       return _product;
     } else {
