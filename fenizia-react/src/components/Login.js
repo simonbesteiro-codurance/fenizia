@@ -71,6 +71,7 @@ function Login() {
                   <img
                     src="https://www.drupal.org/files/issues/2020-01-26/google_logo.png"
                     onClick={() => loginWithGoogle(email, password)}
+                    alt="Sign in with google"
                   ></img>
                 </div>
               </div>
