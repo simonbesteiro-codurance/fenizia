@@ -26,6 +26,11 @@ class ProductStore extends EventEmitter {
     }
   }
 
+//   getCart() {
+// 	//   return [1, 2, 3, 3];
+// 	return _product.find((product) => product.id === id);
+//   }
+
   getProductById(id) {
     return _product.find((product) => product.id === id);
   }
