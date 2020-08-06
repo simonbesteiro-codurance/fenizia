@@ -59,13 +59,10 @@
 }
 
     
-    .novels:hover {
+    .hamburger__products a:hover {
         color: #ffcc00;
     }
 
-    .childish:hover {
-        color: #ffcc00;
-    }
 
 
 .icon__hamburger {
@@ -182,6 +179,10 @@
     .categories:hover .menu__products {
         display: flex;
     }
+
+        .menu__products a:hover {
+            color: #ffcc00;
+        }
 
 
     /* Display None */

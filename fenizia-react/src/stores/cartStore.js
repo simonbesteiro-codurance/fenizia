@@ -39,6 +39,7 @@ class CartStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
+
   addProduct() {
     // si no está lo agrega
     // si está, incrementa el amount
@@ -49,6 +50,9 @@ class CartStore extends EventEmitter {
   getCart(product) {
     // return product.filter((element) => element.id === 3);
     return _cart;
+
+
+
   }
 }
 

@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import userStore from "../stores/userStore";
 import productStore from "../stores/productStore";
 import { loadProducts } from "../actions/productActions";
+import { loadCart } from "../actions/userActions";
+import authStore from "../stores/authStore"
+import cartStore from "../stores/cartStore"
 import { loadCart } from "../actions/cartActions";
-import authStore from "../stores/authStore";
-import cartStore from "../stores/cartStore";
+
 import "./Cart.css";
 
 function Cart() {
