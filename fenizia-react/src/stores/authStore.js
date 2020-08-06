@@ -39,7 +39,7 @@ dispatcher.register((action) => {
       break;
     case actionTypes.LOGOUT:
       _isLogged = false;
-      _userProfile = null;
+      _userProfile = [];
       authStore.emitChange();
       break;
     default:

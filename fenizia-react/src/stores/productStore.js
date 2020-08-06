@@ -18,6 +18,7 @@ class ProductStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
+  // improve code without puting true, with just one return and with ternary operator
   getProduct(criteria) {
     if (!criteria) {
       return _product;
@@ -26,10 +27,9 @@ class ProductStore extends EventEmitter {
     }
   }
 
-//   getCart() {
-// 	//   return [1, 2, 3, 3];
-// 	return _product.find((product) => product.id === id);
-//   }
+  getCart(id) {
+	return _product.filter((product) => product.id === id);
+  }
 
   getProductById(id) {
     return _product.find((product) => product.id === id);
