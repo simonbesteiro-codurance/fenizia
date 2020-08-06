@@ -28,6 +28,7 @@ function App(props) {
           <Route path="/cocina" exact component={ProductList} />
           <Route path="/ensayo" exact component={ProductList} />
           <Route path="/poesia" exact component={ProductList} />
+          <Route path="/todos" exact component={ProductList} />
           <Route path="/cart" exact component={Cart} />
           {/* <Route component={PageNotFound} /> */}
         </Switch>

@@ -1,0 +1,10 @@
+.ProductList__Title {
+    height: 2em;
+    border: 2px yellow;
+    background-color: #FFCC00;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

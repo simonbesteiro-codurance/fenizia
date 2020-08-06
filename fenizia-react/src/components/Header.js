@@ -59,18 +59,25 @@ function Header() {
               Infantil
             </Link>
             <Link
-              onclick={() => setGenre("poesia")}
-              to="/poesia"
-              className="childish"
-            >
-              Poesía
-            </Link>
-            <Link
               onclick={() => setGenre("romantico")}
               to="/romantico"
               className="childish"
             >
               Romántico
+            </Link>
+            <Link
+              onclick={() => setGenre("thriller")}
+              to="/thriller"
+              className="childish"
+            >
+              Thriller
+            </Link>
+            <Link
+              onclick={() => setGenre("todos")}
+              to="/todos"
+              className="childish"
+            >
+              TODOS
             </Link>
           </ul>
         </div>
@@ -113,18 +120,25 @@ function Header() {
                 Infantil
               </Link>
               <Link
-                onclick={() => setGenre("poesia")}
-                to="/poesia"
-                className="childish"
-              >
-                Poesía
-              </Link>
-              <Link
                 onclick={() => setGenre("romantico")}
                 to="/romantico"
                 className="childish"
               >
                 Romántico
+              </Link>
+              <Link
+                onclick={() => setGenre("thriller")}
+                to="/thriller"
+                className="childish"
+              >
+                Thriller
+              </Link>
+              <Link
+                onclick={() => setGenre("todos")}
+                to="/todos"
+                className="childish"
+              >
+                TODOS
               </Link>
             </ul>
           </div>

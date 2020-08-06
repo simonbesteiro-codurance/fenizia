@@ -3,9 +3,9 @@ import { loadProducts } from "../actions/productActions";
 import productStore from "../stores/productStore";
 import genreStore from "../stores/genreStore";
 import ProductListItem from "./ProductListItem";
+import "./ProductList.css";
 
 function ProductList(props) {
-  // const [genre, setGenre] = useState(genreStore.getGenre());
   const [genre, setGenre] = useState(null);
   const [products, setProducts] = useState(
     productStore.getProductByGenre(genre)
@@ -14,7 +14,6 @@ function ProductList(props) {
   useEffect(() => {
     const genre = props.match.params.genre;
     setProducts(productStore.getProductByGenre(genre));
-    console.log(productStore.getProductByGenre(genre));
     productStore.addChangeListener(onChange);
     if (products.length === 0) loadProducts();
     return () => productStore.removeChangeListener(onChange);
@@ -27,6 +26,7 @@ function ProductList(props) {
 
   return (
     <>
+      <div className="ProductList__Title"><p>{props.match.params.genre.toUpperCase()}</p></div>
       {products.map((product) => (
         <ProductListItem
           key={product.id}

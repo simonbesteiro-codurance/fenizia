@@ -30,7 +30,7 @@ class ProductStore extends EventEmitter {
 
   getProductByGenre(criteria) {
     console.log(criteria);
-    if (!criteria) {
+    if (!criteria || criteria === 'todos') {
       return _product;
     } else {
       return _product.filter((product) => product.product.genre === criteria);
