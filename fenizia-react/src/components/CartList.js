@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect }  from 'react'
 import './CartList.css'
 import { Link } from 'react-router-dom'
+import cartStore from "../stores/cartStore"
 
 
+function CartList({ title, author, id, price, cover, amount }) {
 
+    function deleteToCart(id) {
+        cartStore.removeProduct(id);
+    }
 
-function CartList({ title, author, price, cover, amount }) {
     return (
         <>
         <div className="main-box-cart">
             <img className="box__image box__image--small" src={cover} alt="Book" />
                 <div className="box__text">
-                    <h3 className="box__title">{title}</h3>
-                    <p className="box__author">{author}</p>
+                    <div className="box__title--contain">
+                        <h3 className="box__title">{title}</h3>
+                        <p className="box__author">{author}</p>
+                    </div>
+                    <div className="trash-contain">
+                        <Link onClick={() => deleteToCart(id)} className="trash"></Link>
+                    </div>
                 </div>
                 <p className="flex-grow-right"></p>
                 <p className="box__price--amount">{amount}</p>
@@ -21,7 +30,6 @@ function CartList({ title, author, price, cover, amount }) {
                 <p className="flex-grow-left"></p>
                 <p className="box__price--total">{price * amount}<span>€</span></p>
         </div>  
-        <Link className="trash"></Link>
         </>
     )
 }

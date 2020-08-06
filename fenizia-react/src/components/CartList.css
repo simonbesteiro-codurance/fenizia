@@ -10,6 +10,12 @@
     width: 80%;
 }
 
+.box__title--contain {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start ;
+}
+
 .title {
     margin: 7rem auto;
     padding-bottom: .5rem;
@@ -59,4 +65,15 @@
 }
 
 
+.trash {
+    display: inline-block;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    background-image: url(../icons/trash.svg);
+    background-position: center;
+    background-size: 1em;
+    background-repeat: no-repeat;  
+}
 

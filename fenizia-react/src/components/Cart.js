@@ -34,6 +34,7 @@ function Cart() {
       {cart.map((cartProduct) => (
         <CartList 
           key={cartProduct.product.id}
+          id={cartProduct.product.id}
           title={cartProduct.product.product.title}
           author={cartProduct.product.product.author}
           price={cartProduct.product.product.price}

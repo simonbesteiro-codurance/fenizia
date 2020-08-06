@@ -49,10 +49,15 @@ class CartStore extends EventEmitter {
     return _cart
   }
 
-  removeProduct() {}
+  removeProduct(deleteId) {
+    console.log(_cart)
+    _cart = _cart.filter((element) => element.product.id !== deleteId)
+    console.log(_cart)
+    console.log(deleteId)
+   return _cart
+  }
 
-  getCart() {
-    
+  getCart() {  
     return _cart;
   }
 }
@@ -67,6 +72,9 @@ dispatcher.register((action) => {
     case actionTypes.UPDATE_CART_ITEM:
       cartStore.emitChange();
       break;
+    case actionTypes.DELETE_HERO:
+			cartStore.emitChange();
+			break;
     default:
       break;
   }

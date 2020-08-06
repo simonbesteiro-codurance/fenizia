@@ -13,4 +13,10 @@ export function getCart() {
   });
 }
 
+export function removeProduct(id) {
+  dispatcher.dispatch({
+    type: actionTypes.DELETE_CART_ITEM
+  });
+}
+
 
