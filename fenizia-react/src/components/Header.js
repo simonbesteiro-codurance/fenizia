@@ -30,14 +30,28 @@ function Header() {
     } */}
 
     <section className="main-nav">
-      <Link to="/" className="icon__hamburger"></Link>
+      <div className="hamburger">
+        <Link to="/" className="icon__hamburger"></Link>
+        <ul className="hamburger__products">
+          <Link to="/" className="novels">Novelas</Link>
+          <Link to="/" className="childish">Infantil</Link>        
+        </ul>
+      </div>
 
       <Link to="/" className="icon__logo"></Link>
 
       <div className="main-nav-text">
         <Link to="/">INICIO</Link>
         <Link to="/sobre-nosotros">SOBRE NOSOTROS</Link>
-        <Link to="/productos">CATEGORÍAS</Link>
+        
+        <div className="categories">
+          <Link to="/productos">CATEGORÍAS</Link>
+          <ul className="menu__products">
+            <Link to="/" className="novels">Novelas</Link>
+            <Link to="/" className="childish">Infantil</Link>  
+          </ul>
+        </div>
+       
         <Link to="/contacto">CONTACTO</Link>
       </div>
 
