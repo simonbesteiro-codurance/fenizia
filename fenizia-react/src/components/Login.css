@@ -55,7 +55,9 @@
   color: #333;
   border: 2px solid #333;
 }
-
+.input__search {
+  margin: auto;
+}
 /* QUERIES */
 
 @media screen and (max-width: 599px) {

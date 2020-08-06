@@ -3,24 +3,27 @@ import "./Login.css";
 import { login, logout, loginWithGoogle } from "../actions/authActions";
 import authStore from "../stores/authStore";
 import Profile from "./Profile";
+import TextInput from "./TextInput";
 
 function Login() {
-  const email = "gilbe.cao@gmail.com";
-  const password = "1234567";
-
   const [isLogged, setIsLogged] = useState(authStore.isLogged());
   const [user, setUser] = useState(authStore.getUserProfile());
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     authStore.addChangeListener(onAuthChange);
+
     return () => authStore.removeChangeListener(onAuthChange);
   }, [isLogged, user]);
-
+  function onFieldChange(value, setValue) {
+    setValue(value);
+  }
   function onAuthChange() {
     setIsLogged(authStore.isLogged());
     setUser(authStore.getUserProfile());
   }
-  console.log(user);
+
   return (
     <>
       {!isLogged && (
@@ -38,12 +41,28 @@ function Login() {
                 <span>Log in</span>
 
                 <div data-validate="Enter username">
-                  <input type="text" name="username" placeholder="Username" />
+                  <TextInput
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={email}
+                    onChange={(event) =>
+                      onFieldChange(event.target.value, setEmail)
+                    }
+                  />
                   <span data-placeholder=""></span>
                 </div>
 
                 <div data-validate="Enter password">
-                  <input type="password" name="pass" placeholder="Password" />
+                  <TextInput
+                    type="password"
+                    name="pass"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(event) =>
+                      onFieldChange(event.target.value, setPassword)
+                    }
+                  />
                   <span data-placeholder=""></span>
                 </div>
 
@@ -59,9 +78,6 @@ function Login() {
           </div>
         </>
       )}
-      {/* {!isLogged && (
-        //<button onClick={() => login(email, password)}>Login</button>
-      )}  */}
       {isLogged && (
         <>
           <button className="logout-btn" onClick={() => logout()}>

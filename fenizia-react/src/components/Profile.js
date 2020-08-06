@@ -4,16 +4,12 @@ import ListaDeFavoritos from "./ListaDeFavoritos";
 import ProductosEnVenta from "./ProductosEnVenta";
 import authStore from "../stores/authStore";
 import {} from "../user.mock";
-import userList from "../user.mock";
 import "./Profile.css";
 
 function Profile() {
   const [showList, setShowList] = useState(<HistorialDePedidos />);
-  const [user, setUser] = useState(authStore.getUserProfile());
-  let loadedUser = 11;
+  const [user] = useState(authStore.getUserProfile());
 
-  //Es asincrono? se muestra 3 veces
-  console.log(user);
   return (
     <div className="profile-container">
       <div className="profile-container__image">
@@ -28,7 +24,7 @@ function Profile() {
           />
         </div>
         <div className="profile-container__image__text">
-          <p>{user.displayName}</p>
+          <p>{!!user.displayName ? user.displayName : "USUARIO"}</p>
         </div>
       </div>
       <div className="profile-container__list">
