@@ -5,8 +5,6 @@ import "./Cart.css";
 function Cart() {
   const [cart, setCart] = useState(cartStore.getCart());
 
-  //   console.log(cart);
-
   useEffect(() => {
     cartStore.addChangeListener(onChange);
     return () => {
@@ -39,7 +37,7 @@ function Cart() {
         </div>
     </div>     
     ))} */}
-      {cart.length}
+      {cart[0].amount}
     </>
   );
 }

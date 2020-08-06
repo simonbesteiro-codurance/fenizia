@@ -70,7 +70,7 @@ const productList = [
 			description: 'Una emocionante historia basada en hechos reales sobre la memoria, el amor y la esperanza en medio del horror de Auschwitz.',
 			newRelease: false,
 			bestSeller: true,
-			genre: 'policiaco'
+			genre: 'historico'
 		}
 	},
 	{ 
