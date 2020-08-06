@@ -29,12 +29,52 @@
     /* background-color: lightcoral; */
 }
 
+.hamburger {
+    position: relative;
+}
+
+    .hamburger:hover .hamburger__products {
+        display: flex;
+    }
+
+.hamburger__products {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff  ;
+    width: 150px;
+    height: auto;
+    padding: .5rem;
+    top: 50px;
+    left: .8rem;
+    display: none;
+}
+
+.novelas,
+.infantil {
+    color: #000;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: .3rem;
+}
+
+    
+    .novelas:hover {
+        color: #ffcc00;
+    }
+
+    .infantil:hover {
+        color: #ffcc00;
+    }
+
+
 .icon__hamburger {
     background-image: url(../icons/hamburger.svg);
     background-position: center;
     background-size: 1.5em;
     background-repeat: no-repeat;
-}
+}  
+
 
 .icon__logo {
     display: inline-block;
@@ -121,6 +161,19 @@
         padding: .6rem;
         border: .05rem solid black;
         border-radius: .3rem;
+    }
+
+    /* Open Menu */
+    .categories {
+        position: relative;
+    }
+
+    .menu__products {
+        position: absolute;
+        background-color: aqua;
+        width: 200px;
+        height: auto;
+        padding: .5rem;
     }
 
 
