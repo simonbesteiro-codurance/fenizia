@@ -9,7 +9,7 @@
   margin: auto;
   width: 40vw;
   height: 60vh;
-  border: solid 4px black;
+  border: solid 4px #333;
   border-radius: 2%;
   text-align: center;
 }
@@ -33,9 +33,31 @@
   min-width: 70px;
 }
 .login-wrap__form__btn > button:hover {
-  border: 2px black solid;
+  border: 2px #333 solid;
 }
-
+.login-wrap__form__btn > img {
+  width: 80%;
+  margin: 2.2vw;
+  border: 2px solid #333;
+}
+.login-wrap__form__btn > img:hover {
+  border: 2px solid #ffcc00;
+}
+.logout-btn {
+  background-color: #ffcc00;
+  margin-left: 80vw;
+  margin-top: 2vh;
+  padding: 0.6vw;
+  color: #fff;
+  border: 2px solid transparent;
+}
+.logout-btn:hover {
+  color: #333;
+  border: 2px solid #333;
+}
+.input__search {
+  margin: auto;
+}
 /* QUERIES */
 
 @media screen and (max-width: 599px) {

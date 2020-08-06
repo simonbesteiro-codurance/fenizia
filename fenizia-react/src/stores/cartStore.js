@@ -1,8 +1,12 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
+import product from '../product.mock'
+
+
 
 const CHANGE_EVENT = "change";
+
 let _cart = [];
 
 class CartStore extends EventEmitter {
@@ -18,9 +22,38 @@ class CartStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-  getCart(product) {
-    // return product.filter((element) => element.id === 3);
-    return 3
+
+  addProduct(id) {
+    let productObject = product.find((element) => element.id === id);
+    let checker = false
+    for (let i of _cart){
+      if (i.product.id === id) {
+        i.amount++; 
+        checker = true;
+      }
+    }
+    if (!checker)
+    _cart.push({
+      amount: 1,
+      product: {
+        id,
+        product: {
+          title: productObject.product.title,
+          author: productObject.product.author,
+          price: productObject.product.price,
+          cover: productObject.product.cover
+        },
+      },
+    });
+
+    return _cart
+  }
+
+  removeProduct() {}
+
+  getCart() {
+    
+    return _cart;
   }
 }
 
@@ -29,8 +62,10 @@ const cartStore = new CartStore();
 dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOAD_CART:
-      _cart = action.data;
-      cartStore.emitChange(_cart);
+      cartStore.emitChange();
+      break;
+    case actionTypes.UPDATE_CART_ITEM:
+      cartStore.emitChange();
       break;
     default:
       break;

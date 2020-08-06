@@ -1,6 +1,9 @@
+.img__contain {
+    position: relative; 
+}
+
 .img__cover {
     width: 100%;
-    position: relative; 
 }
 
 .img__title {

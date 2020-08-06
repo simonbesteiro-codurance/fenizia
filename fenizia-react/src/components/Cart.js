@@ -1,45 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import userStore from "../stores/userStore";
-import productStore from "../stores/productStore";
-import { loadCart } from "../actions/userActions";
-import authStore from "../stores/authStore"
 import cartStore from "../stores/cartStore"
-import { loadCart } from "../actions/cartActions";
-
-import "./Cart.css";
 import CartList from "./CartList";
+import './CartList.css'
 
 function Cart() {
-  const [user, setUser] = useState(authStore.getUserProfile());
-  const [product, setProduct] = useState(productStore.getProduct());
-  const [cart, setCart] = useState(cartStore.getCart(product));
-  const [product, setProduct] = useState(productStore.getProductById(cart));
-  
+  const [cart, setCart] = useState(cartStore.getCart());
 
   useEffect(() => {
-    authStore.addChangeListener(onChange);
     cartStore.addChangeListener(onChange);
-    productStore.addChangeListener(onChange);
-    if (cart.length === 0) loadCart();
     return () => {
-      authStore.removeChangeListener(onChange);
       cartStore.removeChangeListener(onChange);
-      productStore.removeChangeListener(onChange);
     };
-  }, [user, cart]);
+  }, [cart.length]);
 
   function onChange() {
-    setUser(authStore.getUserProfile());
-    setCart(cartStore.getCart(user));
-    setProduct(productStore.getProduct());
+    setCart(cartStore.getCart());
   }
 
   return (
     <>
-      {cart.map((product) => (
+
+      <h2 className="title">Cesta de la compra</h2>
+      <div className="nav-contain">
+          <p>ARTÍCULO</p>
+          <p className="flex-grow-right"></p>
+          <p>CANTIDAD</p>
+          <p className="flex-grow-left"></p>
+          <p>PRECIO UNIDAD</p>
+          <p className="flex-grow-left"></p>
+          <p>PRECIO</p>
+      </div>
+
+      {cart.map((cartProduct) => (
         <CartList 
-        
+          key={cartProduct.product.id}
+          title={cartProduct.product.product.title}
+          author={cartProduct.product.product.author}
+          price={cartProduct.product.product.price}
+          cover={cartProduct.product.product.cover}
+          amount={cartProduct.amount}
         />   
     ))}
     </>

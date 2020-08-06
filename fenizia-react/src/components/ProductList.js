@@ -23,6 +23,7 @@ function ProductList() {
                 {products.map((product) => (
                     <ProductListItem 
                         key={product.id}
+                        id={product.id}
                         title={product.product.title}
                         author={product.product.author}
                         price={product.product.price}
