@@ -239,6 +239,86 @@ const productList = [
       genre: "ensayo",
     },
   },
+  {
+    id: 16,
+    product: {
+      type: "book",
+      title: "Juega y diviértete con los SuperZings",
+      author: "Varios",
+      price: 22.95,
+      rating: 6.5,
+      cover: "https://imagessl7.casadellibro.com/a/l/t5/07/9788494060007.jpg",
+      description:
+        "Juega y diviértete con los superzings. Incluye 2 One Pack Serie 5 + 1 Máscara SZ (4 modelos distintos) + 1 Set de lápices de colores (3 lápices).",
+      newRelease: true,
+      bestSeller: false,
+      genre: "infantil",
+    },
+  },
+  {
+    id: 17,
+    product: {
+      type: "book",
+      title: "Momo",
+      author: "Michael Ende",
+      price: 12.95,
+      rating: 8.5,
+      cover: "https://imagessl7.casadellibro.com/a/l/t5/67/9788420482767.jpg",
+      description:
+        "Momo es una niña con un don muy especial: sólo con escuchar consigue que los que están tristes se sientan mejor, los que están enfadados solucionen sus problemas o que a los que están aburridos se les ocurran cosas divertidas. De repente, la llegada de los hombres grises va a cambiar su vida.",
+      newRelease: false,
+      bestSeller: true,
+      genre: "infantil",
+    },
+  },
+  {
+    id: 18,
+    product: {
+      type: "book",
+      title: "Abuela, te quiero hasta la luna y volver",
+      author: "Mariana Pérez-Duarte",
+      price: 14.45,
+      rating: 7.5,
+      cover: "https://imagessl3.casadellibro.com/a/l/t5/83/9788417424183.jpg",
+      description:
+        "¡Quien tiene una abuela, tiene un tesoro! Un maravilloso libro que os hará disfrutar y vivir momentos inolvidables, y en el que podréis guardar recuerdos para siempre.",
+      newRelease: false,
+      bestSeller: false,
+      genre: "infantil",
+    },
+  },
+  {
+    id: 19,
+    product: {
+      type: "book",
+      title: "Resuelve el misterio. El secreto de la mansión",
+      author: "Lauren Magaziner",
+      price: 17.45,
+      rating: 7.2,
+      cover: "https://imagessl7.casadellibro.com/a/l/t1/37/9788427214637.jpg",
+      description:
+        "Alguien quiere hacerse con el tesoro escondido de una excentica millonaria. Pero la busqueda del culpable se ve complicada por todo tipo de acertijos, enigmas, oscuros secretos y un monton de decisiones imposibles. Por si fuese poco, Carlos es el encargado de investigar lo ocurrido y no ha resuelto un misterio en su vida, asi que va a necesitar tu ayuda para resolver su primer caso.",
+      newRelease: false,
+      bestSeller: false,
+      genre: "infantil",
+    },
+  },
+  {
+    id: 20,
+    product: {
+      type: "book",
+      title: "MikelTube y la brújula del destino",
+      author: "MikelTube",
+      price: 19.5,
+      rating: 7,
+      cover: "https://imagessl9.casadellibro.com/a/l/t1/99/9788408229599.jpg",
+      description:
+        "Es el ultimo dia de cole antes de las vacaciones de verano. Mikel y Leo cuentan las horas para que acaben las clases, ¡pero lo que no saben es que estan a punto de enfrentarse a una de las mayores aventuras de su vida! Junto con su familia, su gatito Bills y el profesor NoVe emprenderan un viaje interdimensional para enfrentarse a la malvada bruja Gunilda, ¡la Tenebrosa Emperatriz de Marte! ",
+      newRelease: true,
+      bestSeller: false,
+      genre: "infantil",
+    },
+  },
 ];
 
 export default productList;
