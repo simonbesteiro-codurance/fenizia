@@ -18,9 +18,9 @@ function App(props) {
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />
           <Route path="/login" exact component={Login} />
-		  <Route path="/novedades" exact component={ProductList} />
-		  <Route path="/cart" exact component={Cart} />
-         	<Route component={PageNotFound} />
+		    <Route path="/novedades" exact component={ProductList} />
+		    {/* <Route path="/cart" exact component={Cart} /> */}
+         	{/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
       <Footer />
