@@ -7,7 +7,7 @@ const productList = [
       author: "Reyes Monforte",
       price: 19.85,
       rating: 9,
-      cover: "https://imagessl0.casadellibro.com/a/l/t1/90/9788401023590.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51HzFPWh3dL._SX320_BO1,204,203,200_.jpg",
       description:
         "Una emocionante historia basada en hechos reales sobre la memoria, el amor y la esperanza en medio del horror de Auschwitz.",
       newRelease: true,
@@ -23,7 +23,7 @@ const productList = [
       author: "The Crazy Haacks",
       price: 17,
       rating: 8.5,
-      cover: "https://imagessl8.casadellibro.com/a/l/t1/98/9788418038198.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51Z8ckAJGEL._SX327_BO1,204,203,200_.jpg",
       description:
         "¿Que pasaría si THE CRAZY HAACKS dejásemos de ser... CRAZY? ¡SERÍA EL FIN DE LA LOCURA Y LA DIVERSIÓN! Una poción está poniendo en peligro nuestra identidad y deberemos viajar a la INDIA para lograr el antídoto de LA PÓCIMA ETERNA.",
       newRelease: true,
@@ -39,7 +39,7 @@ const productList = [
       author: "Irene Vallejo",
       price: 23.7,
       rating: 7.5,
-      cover: "https://imagessl0.casadellibro.com/a/l/t5/90/9788417860790.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51qZJqyLTFL._SX335_BO1,204,203,200_.jpg",
       description:
         "Este es un libro sobre la historia de los libros. Un recorrido por la vida de ese fascinante artefacto que inventamos para que las palabras pudieran viajar en el espacio y en el tiempo.",
       newRelease: true,
@@ -55,7 +55,7 @@ const productList = [
       author: "Javier Serra",
       price: 15.1,
       rating: 5,
-      cover: "https://imagessl2.casadellibro.com/a/l/t1/32/9788408232032.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41JxWWsF9+L._SY344_BO1,204,203,200_.jpg",
       description:
         "El día que Arys cumplió dieciocho años recibió esta extraña carta. Le llegó desde Atenas envuelta en papel de estraza con el apremio de que debía leerla de inmediato.",
       newRelease: true,
@@ -71,7 +71,7 @@ const productList = [
       author: "Mikel Santiago",
       price: 18.85,
       rating: 7.8,
-      cover: "https://imagessl9.casadellibro.com/a/l/t1/49/9788466667449.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41mLkvZRYuL._SX327_BO1,204,203,200_.jpg",
       description:
         "Hay novelas imposibles de abandonar una vez leídas las primeras páginas. Historias que reinventan el suspense y hacen dudar al lector cada vez que termina un capítulo.",
       newRelease: true,
@@ -87,7 +87,7 @@ const productList = [
       author: "Juan Gómez-Jurado",
       price: 14.85,
       rating: 7.5,
-      cover: "https://imagessl7.casadellibro.com/a/l/t1/97/9788466666497.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41N6Q2E9i-L._SX325_BO1,204,203,200_.jpg",
       description:
         "Antonia Scott no tiene miedo a nada. Solo a sí misma. Pero hay alguien más peligroso que ella. Alguien que podría vencerla.",
       newRelease: true,
@@ -103,7 +103,7 @@ const productList = [
       author: "Arturo Pérez-Reverte",
       price: 11.25,
       rating: 6.3,
-      cover: "https://imagessl3.casadellibro.com/a/l/t1/73/9788420435473.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41JwCRRKjfL._SX309_BO1,204,203,200_.jpg",
       description:
         "No tenía patria ni rey, sólo un puñado de hombres fieles. No tenían hambre de gloria, sólo hambre. Así nace un mito. Así se cuenta una leyenda.",
       newRelease: true,
@@ -135,7 +135,7 @@ const productList = [
       author: "Varios",
       price: 24.95,
       rating: 8,
-      cover: "https://imagessl5.casadellibro.com/a/l/t1/95/9788467058895.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41JQLZcyTrL._SX378_BO1,204,203,200_.jpg",
       description:
         "La guía más completa de cocina, con todas las técnicas, trucos, utensilios y las recetas más emblemáticas del famoso programa de TVE MasterChef.",
       newRelease: true,
@@ -151,7 +151,7 @@ const productList = [
       author: "Antoine de Saint-Exupéry",
       price: 11.95,
       rating: 9.8,
-      cover: "https://imagessl8.casadellibro.com/a/l/t1/98/9788498381498.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41h0-zrL-bL._SX350_BO1,204,203,200_.jpg",
       description:
         "Un aviador se encuentra perdido en el desierto del Sahara, después de haber tenido una avería en su avión. Entonces aparece un pequeño príncipe... El principito vive en un pequeño planeta, el asteroide B 612, en el que hay tres volcanes.",
       newRelease: false,
@@ -167,7 +167,7 @@ const productList = [
       author: "Viktor Frankl",
       price: 12.5,
       rating: 8.5,
-      cover: "https://imagessl6.casadellibro.com/a/l/t1/26/9788425432026.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51FK1XAlsYL._SX324_BO1,204,203,200_.jpg",
       description:
         "El hombre en busca de sentido es un libro escrito por el psiquiatra austriaco Viktor Emil Frankl, publicado en Alemania en 1946. En inglés se editó con los títulos From Death-Camp to Existentialism en 1959 y Man´s Search for Meaning en 1962. ",
       newRelease: false,
@@ -199,7 +199,7 @@ const productList = [
       author: "George Orwell",
       price: 9.95,
       rating: 9.5,
-      cover: "https://imagessl4.casadellibro.com/a/l/t5/44/9788499890944.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51pAui14H6L._SX326_BO1,204,203,200_.jpg",
       description:
         "'No creo que la sociedad que he descrito en 1984 necesariamente llegue a ser una realidad, pero sí creo que puede llegar a existir algo parecido', escribía Orwell despues de publicar su novela. Corría el año 1948, y la realidad se ha encargado de convertir esa pieza -entonces de ciencia ficción- en un manifiesto de la realidad.",
       newRelease: false,
@@ -215,7 +215,7 @@ const productList = [
       author: "J.K. Rowling",
       price: 17.95,
       rating: 7.5,
-      cover: "https://imagessl0.casadellibro.com/a/l/t5/90/9788478885190.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/41RHagRVAlL._SX312_BO1,204,203,200_.jpg",
       description:
         "Harry Potter y el prisionero deAzkaban es la tercera novela de la ya clásica serie fantástica de la autora británica J.K. Rowling. «Bienvenido al autobús noctámbulo, transporte de emergencia para el brujo abandonado a su suerte. Levante la varita, suba a bordo y lo llevaremos a donde quiera.»",
       newRelease: false,
@@ -247,7 +247,7 @@ const productList = [
       author: "Varios",
       price: 22.95,
       rating: 6.5,
-      cover: "https://imagessl7.casadellibro.com/a/l/t5/07/9788494060007.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/61PKH82TUpL._SX374_BO1,204,203,200_.jpg",
       description:
         "Juega y diviértete con los superzings. Incluye 2 One Pack Serie 5 + 1 Máscara SZ (4 modelos distintos) + 1 Set de lápices de colores (3 lápices).",
       newRelease: true,
@@ -263,7 +263,7 @@ const productList = [
       author: "Michael Ende",
       price: 12.95,
       rating: 8.5,
-      cover: "https://imagessl7.casadellibro.com/a/l/t5/67/9788420482767.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/51x5N8J2ekL._SX323_BO1,204,203,200_.jpg",
       description:
         "Momo es una niña con un don muy especial: sólo con escuchar consigue que los que están tristes se sientan mejor, los que están enfadados solucionen sus problemas o que a los que están aburridos se les ocurran cosas divertidas. De repente, la llegada de los hombres grises va a cambiar su vida.",
       newRelease: false,
@@ -311,7 +311,7 @@ const productList = [
       author: "MikelTube",
       price: 19.5,
       rating: 7,
-      cover: "https://imagessl9.casadellibro.com/a/l/t1/99/9788408229599.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/61SVsKyIukL._SX370_BO1,204,203,200_.jpg",
       description:
         "Es el ultimo dia de cole antes de las vacaciones de verano. Mikel y Leo cuentan las horas para que acaben las clases, ¡pero lo que no saben es que estan a punto de enfrentarse a una de las mayores aventuras de su vida! Junto con su familia, su gatito Bills y el profesor NoVe emprenderan un viaje interdimensional para enfrentarse a la malvada bruja Gunilda, ¡la Tenebrosa Emperatriz de Marte! ",
       newRelease: true,
