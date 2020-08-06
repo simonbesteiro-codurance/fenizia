@@ -18,12 +18,19 @@ class CartStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
+<<<<<<< HEAD
   getCart() {
 	// return _product.filter((product) => product.id === id);
+=======
+  getCart(product) {
+    // return product.filter((element) => element.id === 3);
+    return 3
+>>>>>>> 4fa03f39fb5df466c66395a458d5186798e4c7b4
   }
 }
 
 const cartStore = new CartStore();
+
 dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOAD_CART:
