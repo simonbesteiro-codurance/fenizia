@@ -33,8 +33,8 @@ const authStore = new AuthStore();
 dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOGIN:
-      _isLogged = !!action.data;
-      _userProfile = action.data;
+      _userProfile = action.user;
+      _isLogged = !!action.user;
       authStore.emitChange();
       break;
     case actionTypes.LOGOUT:
