@@ -22,6 +22,8 @@ function App(props) {
           <Route path="/profile" exact component={Profile} />
           <Route path="/login" exact component={Login} />
           <Route path="/novedades" exact component={ProductList} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/register" exact component={Register} />
           <Route path="/:genre" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList}/>
           <Route path="/romantico" exact component={ProductList} />
@@ -30,9 +32,7 @@ function App(props) {
           <Route path="/ensayo" exact component={ProductList} />
           <Route path="/poesia" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/register" exact component={Register} />
-          {/* <Route component={PageNotFound} /> */}
+          {/* <Route component={PageNotFound} />  */}
         </Switch>
       </div>
       <Footer />
