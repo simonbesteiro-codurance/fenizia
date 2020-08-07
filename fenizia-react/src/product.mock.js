@@ -119,7 +119,7 @@ const productList = [
       author: "Sonsoles Onega",
       price: 20.95,
       rating: 8.4,
-      cover: "https://imagessl0.casadellibro.com/a/l/t5/30/9788408227830.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/411xo-tcEaL._SX324_BO1,204,203,200_.jpg",
       description:
         "A veces las casualidades se hacen cómplices de los deseos. Costanza y Mauro llevaban media vida esperándose hasta que un encuentro imprevisto en la Gran Vía de Madrid volvió a unir sus destinos.",
       newRelease: false,
@@ -183,7 +183,7 @@ const productList = [
       author: "Santiago Posteguillo",
       price: 14.95,
       rating: 6.3,
-      cover: "https://imagessl9.casadellibro.com/a/l/t5/09/9788408197409.jpg",
+      cover: "https://images-na.ssl-images-amazon.com/images/I/4191OJsSR1L._SX327_BO1,204,203,200_.jpg",
       description:
         "192d.C. Varios hombres luchan por un imperio, pero Julia, hija de reyes, madre de césares y esposa de emperador, piensa en algo más grande: una dinastía. Roma está bajo el control de Cómodo, un emperador loco. El Senado se conjura para terminar con el tirano y los gobernadores militares más poderosos podrían dar un golpe de Estado.",
       newRelease: false,
