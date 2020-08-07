@@ -9,8 +9,8 @@ function Dashboard() {
     <>
         <Cover />
         {/* <Carousel /> */}
-        <Slider order="newRelease" url="novedades" text="NOVEDADES" />
-        <Slider order="bestSeller" url="mas-vendidos" text="MÁS VENDIDOS" />
+        <Slider order="newRelease" text="NOVEDADES" />
+        <Slider order="bestSeller" text="MÁS VENDIDOS" />
     </>
   );
 }

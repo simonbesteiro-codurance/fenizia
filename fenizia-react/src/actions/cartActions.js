@@ -6,3 +6,18 @@ export function loadCart() {
     type: actionTypes.LOAD_CART,
   });
 }
+
+export function getCart() {
+  dispatcher.dispatch({
+    type: actionTypes.UPDATE_CART_ITEM
+  });
+}
+
+export function removeProduct(id) {
+  dispatcher.dispatch({
+    type: actionTypes.DELETE_CART_ITEM
+  });
+
+}
+
+

@@ -1,11 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { loadProducts } from "../actions/productActions";
-import productStore from '../stores/productStore';
-import ProductListItem from './ProductListItem'
+import productStore from "../stores/productStore";
+import genreStore from "../stores/genreStore";
+import ProductListItem from "./ProductListItem";
+import "./ProductList.css";
 
+function ProductList(props) {
+  const [genre, setGenre] = useState(null);
+  const [products, setProducts] = useState(
+    productStore.getProductByGenre(genre)
+  );
 
-function ProductList() {
-    const [products, setProducts] = useState(productStore.getProduct());
+  useEffect(() => {
+    const genre = props.match.params.genre;
+    setProducts(productStore.getProductByGenre(genre));
+    productStore.addChangeListener(onChange);
+    if (products.length === 0) loadProducts();
+    return () => productStore.removeChangeListener(onChange);
+  }, [products.length, props.match.params.genre]);
 
     useEffect(() => {
         productStore.addChangeListener(onChange);
@@ -14,7 +26,8 @@ function ProductList() {
       }, [products.length]);
     
       function onChange() {
-        setProducts(productStore.getProduct());
+        setProducts(productStore.getProductByGenre(genre));
+        setGenre(genreStore.getGenre());
       }
         
     
@@ -23,6 +36,7 @@ function ProductList() {
                 {products.map((product) => (
                     <ProductListItem 
                         key={product.id}
+                        id={product.id}
                         title={product.product.title}
                         author={product.product.author}
                         price={product.product.price}
@@ -33,5 +47,8 @@ function ProductList() {
             </>
         );
     }
+
+  
+
 
 export default ProductList;

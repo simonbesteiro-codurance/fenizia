@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
+import { createSign } from "crypto";
 
 const CHANGE_EVENT = "change";
 let _product = [];
@@ -24,6 +25,15 @@ class ProductStore extends EventEmitter {
       return _product;
     } else {
       return _product.filter((product) => product.product[criteria] === true);
+    }
+  }
+
+  getProductByGenre(criteria) {
+    console.log(criteria);
+    if (!criteria || criteria === 'todos') {
+      return _product;
+    } else {
+      return _product.filter((product) => product.product.genre === criteria);
     }
   }
 

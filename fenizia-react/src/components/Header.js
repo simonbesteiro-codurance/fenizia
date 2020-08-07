@@ -6,10 +6,7 @@ import TextInput from "./TextInput";
 function Header() {
   const [productName, setProductName] = useState("");
   const [showForm, setShowForm] = useState(false);
-
-  function onFieldChange(value, setValue) {
-    setValue(value);
-  }
+  const [genre, setGenre] = useState("");
 
   function handleClick() {
     setShowForm(true);
@@ -33,11 +30,54 @@ function Header() {
         <div className="hamburger">
           <Link to="/" className="icon__hamburger"></Link>
           <ul className="hamburger__products">
-            <Link to="/" className="novels">
-              Novelas
+            <Link
+              onclick={() => setGenre("cocina")}
+              to="/cocina"
+              className="novels"
+            >
+              Cocina
             </Link>
-            <Link to="/" className="childish">
+            <Link
+              onclick={() => setGenre("ensayo")}
+              to="/ensayo"
+              className="childish"
+            >
+              Ensayo
+            </Link>
+            <Link
+              onclick={() => setGenre("historia")}
+              to="/historia"
+              className="childish"
+            >
+              Historia
+            </Link>
+            <Link
+              onclick={() => setGenre("infantil")}
+              to="/infantil"
+              className="childish"
+            >
               Infantil
+            </Link>
+            <Link
+              onclick={() => setGenre("romantico")}
+              to="/romantico"
+              className="childish"
+            >
+              Romántico
+            </Link>
+            <Link
+              onclick={() => setGenre("thriller")}
+              to="/thriller"
+              className="childish"
+            >
+              Thriller
+            </Link>
+            <Link
+              onclick={() => setGenre("todos")}
+              to="/todos"
+              className="childish"
+            >
+              TODOS
             </Link>
           </ul>
         </div>
@@ -46,16 +86,59 @@ function Header() {
 
         <div className="main-nav-text">
           <Link to="/">INICIO</Link>
-          <Link to="/about-us">SOBRE NOSOTROS</Link>
+          <Link to="/sobre-nosotros">SOBRE NOSOTROS</Link>
 
           <div className="categories">
-            <Link to="/productos">CATEGORÍAS</Link>
+            <Link to="/productos">GÉNEROS</Link>
             <ul className="menu__products">
-              <Link to="/" className="novels">
-                Novelas
+              <Link
+                onclick={() => setGenre("cocina")}
+                to="/cocina"
+                className="novels"
+              >
+                Cocina
               </Link>
-              <Link to="/" className="childish">
+              <Link
+                onclick={() => setGenre("ensayo")}
+                to="/ensayo"
+                className="childish"
+              >
+                Ensayo
+              </Link>
+              <Link
+                onclick={() => setGenre("historia")}
+                to="/historia"
+                className="childish"
+              >
+                Historia
+              </Link>
+              <Link
+                onclick={() => setGenre("infantil")}
+                to="/infantil"
+                className="childish"
+              >
                 Infantil
+              </Link>
+              <Link
+                onclick={() => setGenre("romantico")}
+                to="/romantico"
+                className="childish"
+              >
+                Romántico
+              </Link>
+              <Link
+                onclick={() => setGenre("thriller")}
+                to="/thriller"
+                className="childish"
+              >
+                Thriller
+              </Link>
+              <Link
+                onclick={() => setGenre("todos")}
+                to="/todos"
+                className="childish"
+              >
+                TODOS
               </Link>
             </ul>
           </div>
@@ -69,7 +152,7 @@ function Header() {
 
         <Link to="/login" className="icon__login"></Link>
 
-        <Link to="/" className="icon__bag"></Link>
+        <Link to="/cart" className="icon__bag"></Link>
       </section>
     </>
   );

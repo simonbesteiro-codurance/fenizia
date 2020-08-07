@@ -1,30 +1,12 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import productStore from "./productStore";
+import product from '../product.mock'
+
 
 const CHANGE_EVENT = "change";
-let _cart = [
-  {
-    amount: 5,
-    product: {
-      id: 5,
-      product: {
-        type: "book",
-        title: "El mentiroso",
-        author: "Mikel Santiago",
-        price: 19.85,
-        rating: 8,
-        cover: "https://imagessl5.casadellibro.com/a/l/t1/65/9788484452065.jpg",
-        description:
-          "Una emocionante historia basada en hechos reales sobre la memoria, el amor y la esperanza en medio del horror de Auschwitz.",
-        newRelease: false,
-        bestSeller: true,
-        genre: "policiaco",
-      },
-    },
-  },
-];
+
+let _cart = [];
 
 class CartStore extends EventEmitter {
   addChangeListener(callback) {
@@ -40,19 +22,44 @@ class CartStore extends EventEmitter {
   }
 
 
-  addProduct() {
-    // si no está lo agrega
-    // si está, incrementa el amount
+  addProduct(id) {
+    let productObject = product.find((element) => element.id === id);
+    let checker = false
+    for (let i of _cart){
+      if (i.product.id === id) {
+        i.amount++; 
+        checker = true;
+      }
+    }
+    if (!checker)
+    _cart.push({
+      amount: 1,
+      product: {
+        id,
+        product: {
+          title: productObject.product.title,
+          author: productObject.product.author,
+          price: productObject.product.price,
+          cover: productObject.product.cover
+        },
+      },
+    });
+
+    return _cart
   }
 
-  removeProduct() {}
+  removeProduct(deleteId) {
+    _cart = _cart.filter((element) => element.product.id !== deleteId)
+   return _cart
+  }
 
-  getCart(product) {
-    // return product.filter((element) => element.id === 3);
+  addNumberCart() {
+    let numberCart;
+    return numberCart+ 1;
+  }
+
+  getCart() {  
     return _cart;
-
-
-
   }
 }
 
@@ -61,6 +68,15 @@ const cartStore = new CartStore();
 dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOAD_CART:
+      cartStore.emitChange();
+      break;
+    case actionTypes.UPDATE_CART_ITEM:
+      cartStore.emitChange();
+      break;
+    case actionTypes.DELETE_CART_ITEM:
+			cartStore.emitChange();
+      break;
+    case actionTypes.ADD_NUMBER_CART:
       cartStore.emitChange();
       break;
     default:
