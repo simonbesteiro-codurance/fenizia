@@ -152,8 +152,8 @@ function Header() {
 
         <Link to="/login" className="icon__login"></Link>
 
-        <Link to="/" className="icon__bag"></Link>
-      </section>
+      <Link to="/cart" className="icon__bag"></Link>
+    </section>
     </>
   );
 }
