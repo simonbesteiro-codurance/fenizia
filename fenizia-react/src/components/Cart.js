@@ -1,45 +1,55 @@
 import React, { useState, useEffect } from "react";
 import cartStore from "../stores/cartStore"
-import "./Cart.css";
+import CartList from "./CartList";
+import './CartList.css'
 
 function Cart() {
   const [cart, setCart] = useState(cartStore.getCart());
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
     cartStore.addChangeListener(onChange);
+    setCart(cartStore.getCart() )
     return () => {
       cartStore.removeChangeListener(onChange);
     };
-  }, [cart.length]);
+  }, [count]);
 
   function onChange() {
     setCart(cartStore.getCart());
   }
-
+function toRender(){
+  setCount(count+1)
+}
   return (
     <>
-      {/* {cart.map((product) => (
-        <div className="main-box">
-        <img className="box__image" src="https://imagessl0.casadellibro.com/a/l/t1/90/9788401023590.jpg" />
-        <div className="box__contain">
-            <div className="box__text">
-                <h3 className="box__title">product.product.title</h3>
-                <p className="box__author">product.product.author</p>
-                <p className="box__sinopsis">Sinopsis</p>
-                <p className="box__description">product.product.description</p>
-            </div>
-            <div className="box__button">
-                <p className="box__number-price">product.product.price<span>€</span></p>
-                <p className="box__vat">IVA INCLUÍDO</p>
-                <Link to="/" className="box__button-cart">Agregar a la cesta</Link>
-                <Link to="/" className="box__button-star">Agregar a favoritos</Link>
-            </div>
-        </div>
-    </div>     
-    ))} */}
+
+      <h2 className="title">Cesta de la compra</h2>
+      <div className="nav-contain">
+          <p>ARTÍCULO</p>
+          <p className="flex-grow-right"></p>
+          <p>CANTIDAD</p>
+          <p className="flex-grow-left"></p>
+          <p>PRECIO UNIDAD</p>
+          <p className="flex-grow-left"></p>
+          <p>PRECIO</p>
+      </div>
+
+      {cart.map((cartProduct) => (
+        <CartList 
+          key={cartProduct.product.id}
+          id={cartProduct.product.id}
+          title={cartProduct.product.product.title}
+          author={cartProduct.product.product.author}
+          price={cartProduct.product.product.price}
+          cover={cartProduct.product.product.cover}
+          amount={cartProduct.amount}
+          toRender={toRender}
+        />   
+    ))}
+
       {cart[0].amount}
     </>
-  );
-}
+  )};
 
 export default Cart;

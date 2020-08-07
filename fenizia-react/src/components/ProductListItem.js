@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import "./ProductListItem.css"
+import cartStore from '../stores/cartStore'
 
 
-const ProductListItem = ({ title, author, price, cover, description }) => (
+
+function ProductListItem  ({ title, id, author, price, cover, description }) {
+    
+    function addToCart(id) {
+        cartStore.addProduct(id);
+    }
+    
+
+    return (
     <div className="main-box">
         <img className="box__image" src={cover} alt="Book" />
         <div className="box__contain">
@@ -19,13 +28,13 @@ const ProductListItem = ({ title, author, price, cover, description }) => (
                     <p className="box__vat">IVA INCLUÍDO</p>
                 </div>
                 <div className="box__column-button">
-                    <Link to="/" className="box__button-cart">Agregar a la cesta</Link>
+                    <Link onClick={() => addToCart(id)} className="box__button-cart">Agregar a la cesta</Link>                   
                     <Link to="/" className="box__button-star">Agregar a favoritos</Link>
                 </div>
             </div>
         </div>
     </div>     
-)
+)}
 
 
 export default ProductListItem;

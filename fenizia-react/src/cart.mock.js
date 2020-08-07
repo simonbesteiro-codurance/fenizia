@@ -1,3 +1,2 @@
-const cartList = [2, 4, 6];
+export const cartList = [];
   
-export default cartList;
