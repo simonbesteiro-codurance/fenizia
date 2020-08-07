@@ -19,36 +19,11 @@ function ProductList(props) {
     return () => productStore.removeChangeListener(onChange);
   }, [products.length, props.match.params.genre]);
 
-
-    useEffect(() => {
-        productStore.addChangeListener(onChange);
-        if (products.length === 0) loadProducts();
-        return () => productStore.removeChangeListener(onChange);
-      }, [products.length]);
-    
-      function onChange() {
-        setProducts(productStore.getProductByGenre(genre));
-        setGenre(genreStore.getGenre());
-      }
-        
-    
-      return (
-            <>
-            <div className="ProductList__Title">{props.match.params.genre.toUpperCase()}</div>
-                {products.map((product) => (
-                    <ProductListItem 
-                        key={product.id}
-                        id={product.id}
-                        title={product.product.title}
-                        author={product.product.author}
-                        price={product.product.price}
-                        cover={product.product.cover}
-                        description={product.product.description}
-                    />
-                ))}
-            </>
-        );
-    }
+  useEffect(() => {
+    productStore.addChangeListener(onChange);
+    if (products.length === 0) loadProducts();
+    return () => productStore.removeChangeListener(onChange);
+  }, [products.length]);
 
   function onChange() {
     setProducts(productStore.getProductByGenre(genre));
@@ -71,5 +46,4 @@ function ProductList(props) {
     </>
   );
 }
-
 export default ProductList;
