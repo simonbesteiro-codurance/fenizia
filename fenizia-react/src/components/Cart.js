@@ -5,18 +5,22 @@ import './CartList.css'
 
 function Cart() {
   const [cart, setCart] = useState(cartStore.getCart());
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
     cartStore.addChangeListener(onChange);
+    setCart(cartStore.getCart() )
     return () => {
       cartStore.removeChangeListener(onChange);
     };
-  }, [cart.length]);
+  }, [count]);
 
   function onChange() {
     setCart(cartStore.getCart());
   }
-
+function toRender(){
+  setCount(count+1)
+}
   return (
     <>
 
@@ -40,6 +44,7 @@ function Cart() {
           price={cartProduct.product.product.price}
           cover={cartProduct.product.product.cover}
           amount={cartProduct.amount}
+          toRender={toRender}
         />   
     ))}
     </>

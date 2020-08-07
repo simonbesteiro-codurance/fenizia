@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import cartStore from "../stores/cartStore"
 
 
-function CartList({ title, author, id, price, cover, amount }) {
+function CartList({ title, author, id, price, cover, amount,toRender }) {
 
     function deleteToCart(id) {
         cartStore.removeProduct(id);
+        toRender()
     }
 
     return (

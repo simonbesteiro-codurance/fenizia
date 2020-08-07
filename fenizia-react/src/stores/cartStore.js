@@ -50,10 +50,7 @@ class CartStore extends EventEmitter {
   }
 
   removeProduct(deleteId) {
-    console.log(_cart)
     _cart = _cart.filter((element) => element.product.id !== deleteId)
-    console.log(_cart)
-    console.log(deleteId)
    return _cart
   }
 

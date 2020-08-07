@@ -9,7 +9,6 @@ function ProductListItem  ({ title, id, author, price, cover, description }) {
     
     function addToCart(id) {
         cartStore.addProduct(id);
-        cartStore.addNumberCart()
     }
     
 
