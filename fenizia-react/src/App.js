@@ -7,11 +7,11 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import ProductList from "./components/ProductList";
+
 import Cart from "./components/Cart";
 import Register from "./components/Register";
 
 import About from "./components/About";
-
 
 
 function App(props) {
@@ -25,9 +25,11 @@ function App(props) {
           <Route path="/register" exact component={Register} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/login" exact component={Login} />
-          <Route path="/sobre-nosotros" exact component={About} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/about-us" exact component={AboutUs} />
           <Route path="/:genre" exact component={ProductList} />
-          <Route path="/infantil" exact component={ProductList}/>
+          <Route path="/infantil" exact component={ProductList} />
           <Route path="/romantico" exact component={ProductList} />
           <Route path="/historia" exact component={ProductList} />
           <Route path="/cocina" exact component={ProductList} />
