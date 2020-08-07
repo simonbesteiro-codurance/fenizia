@@ -9,7 +9,9 @@ import Login from "./components/Login";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import Register from "./components/Register";
+
 import About from "./components/About";
+
 
 
 function App(props) {
@@ -32,6 +34,7 @@ function App(props) {
           <Route path="/ensayo" exact component={ProductList} />
           <Route path="/poesia" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
+
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
