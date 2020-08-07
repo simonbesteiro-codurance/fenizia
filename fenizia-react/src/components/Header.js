@@ -143,7 +143,8 @@ function Header() {
             </ul>
           </div>
 
-          <Link to="/contacto">CONTACTO</Link>
+          <a href="https://github.com/simonbesteiro/fenizia">CONTACTO</a>
+          
         </div>
 
         {/* {searchForm} */}
@@ -152,8 +153,8 @@ function Header() {
 
         <Link to="/login" className="icon__login"></Link>
 
-      <Link to="/cart" className="icon__bag"></Link>
-    </section>
+        <Link to="/cart" className="icon__bag"></Link>
+      </section>
     </>
   );
 }

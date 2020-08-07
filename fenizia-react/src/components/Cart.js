@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import cartStore from "../stores/cartStore"
+import cartStore from "../stores/cartStore";
 import CartList from "./CartList";
-import './CartList.css'
+import "./CartList.css";
 
 function Cart() {
   const [cart, setCart] = useState(cartStore.getCart());
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     cartStore.addChangeListener(onChange);
-    setCart(cartStore.getCart() )
+    setCart(cartStore.getCart());
     return () => {
       cartStore.removeChangeListener(onChange);
     };
@@ -18,25 +18,24 @@ function Cart() {
   function onChange() {
     setCart(cartStore.getCart());
   }
-function toRender(){
-  setCount(count+1)
-}
+  function toRender() {
+    setCount(count + 1);
+  }
   return (
     <>
-
       <h2 className="title">Cesta de la compra</h2>
       <div className="nav-contain">
-          <p>ARTÍCULO</p>
-          <p className="flex-grow-right"></p>
-          <p>CANTIDAD</p>
-          <p className="flex-grow-left"></p>
-          <p>PRECIO UNIDAD</p>
-          <p className="flex-grow-left"></p>
-          <p>PRECIO</p>
+        <p>ARTÍCULO</p>
+        <p className="flex-grow-right"></p>
+        <p>CANTIDAD</p>
+        <p className="flex-grow-left"></p>
+        <p>PRECIO UNIDAD</p>
+        <p className="flex-grow-left"></p>
+        <p>PRECIO</p>
       </div>
-
+      {console.log(cart)}
       {cart.map((cartProduct) => (
-        <CartList 
+        <CartList
           key={cartProduct.product.id}
           id={cartProduct.product.id}
           title={cartProduct.product.product.title}
@@ -45,11 +44,12 @@ function toRender(){
           cover={cartProduct.product.product.cover}
           amount={cartProduct.amount}
           toRender={toRender}
-        />   
-    ))}
+        />
+      ))}
 
-      {cart[0].amount}
+      {cart && cart[0].amount}
     </>
-  )};
+  );
+}
 
 export default Cart;
