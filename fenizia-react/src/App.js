@@ -26,7 +26,7 @@ function App(props) {
           <Route path="/login" exact component={Login} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
-          <Route path="/about" exact component={About} />
+          <Route path="/sobre-nosotros" exact component={About} />
           <Route path="/:genre" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList} />
           <Route path="/romantico" exact component={ProductList} />
