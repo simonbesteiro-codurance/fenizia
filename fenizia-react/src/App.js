@@ -7,10 +7,11 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import ProductList from "./components/ProductList";
-import ProductListParent from "./components/ProductListParent";
 import Cart from "./components/Cart";
 import Register from "./components/Register";
-import AboutUs from "./components/AboutUs";
+
+import About from "./components/About";
+
 
 
 function App(props) {
@@ -21,11 +22,10 @@ function App(props) {
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/novedades" exact component={ProductList} />
-          <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
-          <Route path="/about-us" exact component={AboutUs} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/sobre-nosotros" exact component={About} />
           <Route path="/:genre" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList}/>
           <Route path="/romantico" exact component={ProductList} />
@@ -34,7 +34,8 @@ function App(props) {
           <Route path="/ensayo" exact component={ProductList} />
           <Route path="/poesia" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
-          {/* <Route component={PageNotFound} />  */}
+
+          {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
       <Footer />
