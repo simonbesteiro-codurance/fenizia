@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import Register from "./components/Register";
+import AboutUs from "./components/AboutUs";
 
 function App(props) {
   return (
@@ -23,6 +24,7 @@ function App(props) {
           <Route path="/infantil" exact component={ProductList} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
+          <Route path="/about-us" exact component={AboutUs} />
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
