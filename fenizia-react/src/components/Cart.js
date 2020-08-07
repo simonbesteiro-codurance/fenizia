@@ -23,6 +23,7 @@ function Cart() {
   }
   return (
     <>
+    <section className="main-contain-cart">
       <h2 className="title">Cesta de la compra</h2>
       <div className="nav-contain">
         <p>ARTÍCULO</p>
@@ -46,8 +47,7 @@ function Cart() {
           toRender={toRender}
         />
       ))}
-
-      {cart && cart[0].amount}
+      </section>
     </>
   );
 }
