@@ -10,7 +10,9 @@ import ProductList from "./components/ProductList";
 
 import Cart from "./components/Cart";
 import Register from "./components/Register";
-import AboutUs from "./components/AboutUs";
+
+import About from "./components/About";
+
 
 function App(props) {
   return (
@@ -20,8 +22,9 @@ function App(props) {
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/cart" exact component={Cart} />
           <Route path="/login" exact component={Login} />
-
           <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
           <Route path="/about-us" exact component={AboutUs} />
@@ -33,6 +36,7 @@ function App(props) {
           <Route path="/ensayo" exact component={ProductList} />
           <Route path="/poesia" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
+
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
