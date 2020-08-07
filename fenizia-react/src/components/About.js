@@ -30,7 +30,7 @@ function AboutUs() {
       </div>
       <p className="footer-text">
         This is a project made <b>in 3 days</b> on{" "}
-        <a href="https://www.skylabcoders.com/es">Skylab Coders academy</a>{" "}
+        <a className="anchor__skylab" href="https://www.skylabcoders.com/es">Skylab Coders academy</a>{" "}
         during the 202007 Bootcamp.
       </p>
     </>
