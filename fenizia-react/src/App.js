@@ -10,6 +10,7 @@ import ProductList from "./components/ProductList";
 import ProductListParent from "./components/ProductListParent";
 import Cart from "./components/Cart";
 import Register from "./components/Register";
+import AboutUs from "./components/AboutUs";
 
 
 function App(props) {
@@ -24,6 +25,7 @@ function App(props) {
           <Route path="/novedades" exact component={ProductList} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
+          <Route path="/about-us" exact component={AboutUs} />
           <Route path="/:genre" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList}/>
           <Route path="/romantico" exact component={ProductList} />
