@@ -1,8 +1,7 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import product from '../product.mock'
-
+import product from "../product.mock";
 
 const CHANGE_EVENT = "change";
 
@@ -21,44 +20,44 @@ class CartStore extends EventEmitter {
     this.emit(CHANGE_EVENT);
   }
 
-
-  addProduct(id) {
+  addCartProduct(id) {
     let productObject = product.find((element) => element.id === id);
-    let checker = false
-    for (let i of _cart){
+    let checker = false;
+    for (let i of _cart) {
       if (i.product.id === id) {
-        i.amount++; 
+        i.amount++;
         checker = true;
       }
     }
     if (!checker)
-    _cart.push({
-      amount: 1,
-      product: {
-        id,
+      _cart.push({
+        amount: 1,
         product: {
-          title: productObject.product.title,
-          author: productObject.product.author,
-          price: productObject.product.price,
-          cover: productObject.product.cover
+          id,
+          product: {
+            title: productObject.product.title,
+            author: productObject.product.author,
+            price: productObject.product.price,
+            cover: productObject.product.cover,
+          },
         },
-      },
-    });
+      });
 
-    return _cart
+    return _cart;
   }
 
-  removeProduct(deleteId) {
-    _cart = _cart.filter((element) => element.product.id !== deleteId)
-   return _cart
+  removeCartProduct(deleteId) {
+    _cart = _cart.filter((element) => element.product.id !== deleteId);
+
+    return _cart;
   }
 
   addNumberCart() {
     let numberCart;
-    return numberCart+ 1;
+    return numberCart + 1;
   }
 
-  getCart() {  
+  getCart() {
     return _cart;
   }
 }
@@ -74,7 +73,7 @@ dispatcher.register((action) => {
       cartStore.emitChange();
       break;
     case actionTypes.DELETE_CART_ITEM:
-			cartStore.emitChange();
+      cartStore.emitChange();
       break;
     case actionTypes.ADD_NUMBER_CART:
       cartStore.emitChange();
