@@ -13,7 +13,6 @@ import Register from "./components/Register";
 
 import About from "./components/About";
 
-
 function App(props) {
   return (
     <div className="container">
@@ -27,7 +26,7 @@ function App(props) {
           <Route path="/login" exact component={Login} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/register" exact component={Register} />
-          <Route path="/about-us" exact component={AboutUs} />
+          <Route path="/about" exact component={About} />
           <Route path="/:genre" exact component={ProductList} />
           <Route path="/infantil" exact component={ProductList} />
           <Route path="/romantico" exact component={ProductList} />
