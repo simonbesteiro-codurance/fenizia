@@ -47,8 +47,9 @@ function toRender(){
           toRender={toRender}
         />   
     ))}
+
+      {cart[0].amount}
     </>
-  );
-}
+  )};
 
 export default Cart;
