@@ -32,6 +32,7 @@ function ProductList(props) {
 
   return (
     <>
+      <div className="ProductList__Title">{props.match.params.genre.toUpperCase()}</div>
       {products.map((product) => (
         <ProductListItem
           key={product.id}
