@@ -48,7 +48,14 @@ class CartStore extends EventEmitter {
   }
 
   removeCartProduct(deleteId) {
-    _cart = _cart.filter((element) => element.product.id !== deleteId);
+    let search = _cart.filter((element) => element.product.id === deleteId);
+    for (let i of search) {
+      if (i.amount > 1) {
+        i.amount--;
+      } else {
+        _cart = _cart.filter((element) => element.product.id !== deleteId);
+      }
+    }
 
     return _cart;
   }
