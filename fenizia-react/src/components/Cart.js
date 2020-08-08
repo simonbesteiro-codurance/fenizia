@@ -18,9 +18,11 @@ function Cart() {
   function onChange() {
     setCart(cartStore.getCart());
   }
+
   function toRender() {
     setCount(count + 1);
   }
+
   return (
     <>
     <section className="main-contain-cart">
@@ -34,7 +36,7 @@ function Cart() {
         <p className="flex-grow-left"></p>
         <p>PRECIO</p>
       </div>
-      {console.log(cart)}
+  
       {cart.map((cartProduct) => (
         <CartList
           key={cartProduct.product.id}

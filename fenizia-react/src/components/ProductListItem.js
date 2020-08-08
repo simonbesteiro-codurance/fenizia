@@ -6,6 +6,14 @@ import cartStore from "../stores/cartStore";
 function ProductListItem({ title, id, author, price, cover, description }) {
   function addToCart(id) {
     cartStore.addCartProduct(id);
+    addClassRenderCart()
+  }
+
+  function addClassRenderCart() {
+    // let active = true;
+    let classNameNew = 'menu--active';
+
+    return <div className={classNameNew}>Menu</div>
   }
 
   return (
