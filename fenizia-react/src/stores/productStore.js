@@ -49,10 +49,6 @@ dispatcher.register((action) => {
       _product = action.data;
       productStore.emitChange(_product);
       break;
-      case actionTypes.LOAD_CART:
-        _product = action.data;
-        productStore.emitChange(_product);
-        break;
     case actionTypes.NEXT_CAROUSEL:
       productStore.emitChange();
       break;
