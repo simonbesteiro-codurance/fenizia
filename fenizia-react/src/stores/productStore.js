@@ -21,16 +21,10 @@ class ProductStore extends EventEmitter {
 
   // improve code without puting true, with just one return and with ternary operator
   getProduct(criteria) {
-    if (!criteria) {
-      return _product;
-    } else {
-      return _product.filter((product) => product.product[criteria] === true);
-    }
-  }
-
-  getProductByGenre(criteria) {
     if (!criteria || criteria === 'todos') {
       return _product;
+    } else if (criteria === 'novedades' || criteria === 'superventas') {
+      return _product.filter((product) => product.product[criteria] === true);
     } else {
       return _product.filter((product) => product.product.genre === criteria);
     }
@@ -55,6 +49,10 @@ dispatcher.register((action) => {
       _product = action.data;
       productStore.emitChange(_product);
       break;
+      case actionTypes.LOAD_CART:
+        _product = action.data;
+        productStore.emitChange(_product);
+        break;
     case actionTypes.NEXT_CAROUSEL:
       productStore.emitChange();
       break;

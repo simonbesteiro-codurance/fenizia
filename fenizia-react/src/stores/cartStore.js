@@ -3,6 +3,7 @@ import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
 import product from "../product.mock";
 
+
 const CHANGE_EVENT = "change";
 
 let _cart = [];
@@ -47,14 +48,7 @@ class CartStore extends EventEmitter {
   }
 
   removeCartProduct(deleteId) {
-    let search = _cart.filter((element) => element.product.id === deleteId);
-    for (let i of search) {
-      if (i.amount > 1) {
-        i.amount--;
-      } else {
-        _cart = _cart.filter((element) => element.product.id !== deleteId);
-      }
-    }
+    _cart = _cart.filter((element) => element.product.id !== deleteId);
 
     return _cart;
   }
