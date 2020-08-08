@@ -2,15 +2,26 @@ import React, { useState } from "react";
 import { signIn } from "../actions/authActions";
 import TextInput from "./TextInput";
 import "./Register.css";
+import authStore from "../stores/authStore";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [signInError, setSignInError] = useState(authStore.getSignError());
   const [path, setPath] = useState("/login");
   function onFieldChange(value, setValue) {
     setValue(value);
   }
-
+  function signInchecker(email, password) {
+    signIn(email, password);
+    console.log(signInError);
+    // fetch(signIn(email, password))
+    //   .then((response) => {
+    //     console.log("sign in worked");
+    //     console.log(response);
+    //   })
+    //   .catch((error) => console.log(error));
+  }
   return (
     <>
       <main className="register-container">
@@ -27,7 +38,7 @@ function Register() {
           </div>
           <div>
             <TextInput
-              type="text"
+              type="password  "
               name="password"
               placeholder="Password"
               value={password}
@@ -37,14 +48,12 @@ function Register() {
             />
           </div>
           <div>
-            <a href={path}>
-              <button
-                className="register-container__wrap__btn"
-                onClick={() => signIn(email, password)}
-              >
-                Sign in
-              </button>
-            </a>
+            <button
+              className="register-container__wrap__btn"
+              onClick={() => signInchecker(email, password)}
+            >
+              Sign in
+            </button>
           </div>
         </div>
       </main>

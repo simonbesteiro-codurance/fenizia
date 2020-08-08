@@ -14,6 +14,6 @@ export const authMethods = {
     return firebase.auth().signInWithPopup(provider);
   },
   createUser: (email, password) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password);
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
   },
 };
