@@ -17,7 +17,7 @@ function App(props) {
   return (
     <div className="container">
       <Header />
-      <div className="margin-top">
+      <div className="margin-body">
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/profile" exact component={Profile} />

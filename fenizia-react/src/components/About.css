@@ -9,9 +9,9 @@
 .footer-text {
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 2rem;
+    padding: 1rem 0 2rem 0;
     border-top: 1px solid #000;
-    width: 40%;
+    width: 50%;
 }
 
 .img__contain {
@@ -39,6 +39,12 @@
     padding: .5rem 0;
     background-color: #ffcc00;
     width: 200px;
+}
+
+.anchor__skylab {
+    color: #ffcc00;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 780px) {

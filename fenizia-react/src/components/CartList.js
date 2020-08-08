@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
 import "./CartList.css";
 import { Link } from "react-router-dom";
 import cartStore from "../stores/cartStore";
