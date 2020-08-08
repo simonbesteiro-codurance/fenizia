@@ -3,6 +3,7 @@ import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
 import product from "../product.mock";
 
+
 const CHANGE_EVENT = "change";
 
 let _cart = [];

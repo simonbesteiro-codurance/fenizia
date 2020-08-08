@@ -16,9 +16,7 @@
 }
 
 .slider__title {
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 7px;
+  margin: auto 0 auto 2rem;
   color: #fff;
   text-decoration-line: none;
   
@@ -88,9 +86,7 @@
 
   .slider__view-all {
     display: block;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 7px;
+    margin: auto 2rem auto 0;
     color: #fff;
   }
 
