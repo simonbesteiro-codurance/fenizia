@@ -18,11 +18,14 @@ function Cart() {
   function onChange() {
     setCart(cartStore.getCart());
   }
+
   function toRender() {
     setCount(count + 1);
   }
+
   return (
     <>
+    <section className="main-contain-cart">
       <h2 className="title">Cesta de la compra</h2>
       <div className="nav-contain">
         <p>ARTÍCULO</p>
@@ -33,7 +36,7 @@ function Cart() {
         <p className="flex-grow-left"></p>
         <p>PRECIO</p>
       </div>
-      {console.log(cart)}
+  
       {cart.map((cartProduct) => (
         <CartList
           key={cartProduct.product.id}
@@ -46,8 +49,7 @@ function Cart() {
           toRender={toRender}
         />
       ))}
-
-      {cart && cart[0].amount}
+      </section>
     </>
   );
 }

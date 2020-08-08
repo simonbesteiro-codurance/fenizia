@@ -77,3 +77,13 @@
     background-repeat: no-repeat;  
 }
 
+.hola {
+    background-color: rebeccapurple;
+    width: 100px;
+    height: 100px;
+}
+
+.menu--active {
+    /* display: none; */
+    
+}
