@@ -89,7 +89,7 @@ function Header() {
           <Link to="/sobre-nosotros">SOBRE NOSOTROS</Link>
 
           <div className="categories">
-            <Link to="/productos">GÉNEROS</Link>
+            <Link>GÉNEROS</Link>
             <ul className="menu__products">
               <Link
                 onclick={() => setGenre("cocina")}

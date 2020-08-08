@@ -33,7 +33,7 @@ function App(props) {
           <Route path="/historia" exact component={ProductList} />
           <Route path="/cocina" exact component={ProductList} />
           <Route path="/ensayo" exact component={ProductList} />
-          <Route path="/poesia" exact component={ProductList} />
+          <Route path="/thriller" exact component={ProductList} />
           <Route path="/todos" exact component={ProductList} />
 
           {/* <Route component={PageNotFound} /> */}

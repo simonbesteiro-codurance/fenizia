@@ -29,7 +29,6 @@ class ProductStore extends EventEmitter {
   }
 
   getProductByGenre(criteria) {
-    console.log(criteria);
     if (!criteria || criteria === 'todos') {
       return _product;
     } else {
