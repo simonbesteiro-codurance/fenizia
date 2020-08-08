@@ -6,14 +6,15 @@ import cartStore from "../stores/cartStore";
 function ProductListItem({ title, id, author, price, cover, description }) {
   function addToCart(id) {
     cartStore.addCartProduct(id);
-    addClassRenderCart()
+    addClassRenderCart();
   }
+  function addItemFavourites(id) {}
 
   function addClassRenderCart() {
     // let active = true;
-    let classNameNew = 'menu--active';
+    let classNameNew = "menu--active";
 
-    return <div className={classNameNew}>Menu</div>
+    return <div className={classNameNew}>Menu</div>;
   }
 
   return (
@@ -38,7 +39,10 @@ function ProductListItem({ title, id, author, price, cover, description }) {
             <Link onClick={() => addToCart(id)} className="box__button-cart">
               Agregar a la cesta
             </Link>
-            <Link to="/" className="box__button-star">
+            <Link
+              onClick={() => addItemFavourites(id)}
+              className="box__button-star"
+            >
               Agregar a favoritos
             </Link>
           </div>

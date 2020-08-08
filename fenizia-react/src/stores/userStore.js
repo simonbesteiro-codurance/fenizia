@@ -25,6 +25,9 @@ class UserStore extends EventEmitter {
   getUserById(id) {
     return _user.find((user) => user.id === id);
   }
+  addItemFavourites(id) {
+    return;
+  }
 }
 
 const userStore = new UserStore();
