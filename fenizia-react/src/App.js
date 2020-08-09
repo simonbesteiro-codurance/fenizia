@@ -39,7 +39,7 @@ function App(props) {
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
-      <CartDisplay />
+    
       <Footer />
     </div>
   );
