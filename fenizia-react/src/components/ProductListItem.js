@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductListItem.css";
 import cartStore from "../stores/cartStore";
+import userStore from '../stores/userStore'
 
 
 
@@ -37,7 +38,7 @@ function ProductListItem({ title, id, author, price, cover, description, addNumb
             }} className="box__button-cart">
               Agregar a la cesta
             </Link>
-            <Link to="/" className="box__button-star">
+            <Link onClick={()=>{userStore.addFavouriteProduct(id)}} className="box__button-star">
               Agregar a favoritos
             </Link>
           </div>
