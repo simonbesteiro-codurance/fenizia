@@ -7,27 +7,22 @@ import "./ProductList.css";
 import cartStore from "../stores/cartStore";
 
 function ProductList(props) {
-  const [genre, setGenre] = useState(null);
-  const [products, setProducts] = useState(productStore.getProductByGenre(genre));
-  
+
+  const genre = props.match.params.genre;
+  const [products, setProducts] = useState(
+    productStore.getProduct(genre)
+  );
+
 
   useEffect(() => {
     productStore.addChangeListener(onChange);
-    const genre = props.match.params.genre;
-    setProducts(productStore.getProductByGenre(genre));
+    setProducts(productStore.getProduct(genre));
     if (products.length === 0) loadProducts();
     return () => productStore.removeChangeListener(onChange);
-  }, [products.length, props.match.params.genre]);
-
-  useEffect(() => {
-    productStore.addChangeListener(onChange);
-    if (products.length === 0) loadProducts();
-    return () => productStore.removeChangeListener(onChange);
-  }, [products.length]);
+  }, [products.length, genre]);
 
   function onChange() {
-    setProducts(productStore.getProductByGenre(genre));
-    setGenre(genreStore.getGenre());
+    setProducts(productStore.getProduct(genre));
   }
 
   function addNumberCart() {
@@ -38,6 +33,7 @@ function ProductList(props) {
 
   return (
     <>
+      <div className="ProductList__Title">{props.match.params.genre.toUpperCase()}</div>
       {products.map((product) => (
         <ProductListItem
           key={product.id}
