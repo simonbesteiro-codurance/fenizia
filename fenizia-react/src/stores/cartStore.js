@@ -1,14 +1,15 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import product from "../product.mock";
-
+import productStore from "../stores/productStore";
 
 const CHANGE_EVENT = "change";
 
 let _cart = [];
 
 let numberCart = 0;
+
+let product = [];
 
 class CartStore extends EventEmitter {
   addChangeListener(callback) {
@@ -60,7 +61,6 @@ class CartStore extends EventEmitter {
     return _cart;
   }
 
-
   updateNumberCart() {
     ++numberCart;
   }
@@ -69,7 +69,7 @@ class CartStore extends EventEmitter {
     --numberCart;
   }
 
-  getNumberCart(){
+  getNumberCart() {
     return numberCart;
   }
 
@@ -90,6 +90,9 @@ dispatcher.register((action) => {
       break;
     case actionTypes.DELETE_CART_ITEM:
       cartStore.emitChange();
+    case actionTypes.LOAD_PRODUCTS:
+      product = action.data;
+      productStore.emitChange(product);
       break;
     default:
       break;
