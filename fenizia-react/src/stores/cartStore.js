@@ -8,6 +8,8 @@ const CHANGE_EVENT = "change";
 
 let _cart = [];
 
+let numberCart = 0;
+
 class CartStore extends EventEmitter {
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
@@ -43,8 +45,6 @@ class CartStore extends EventEmitter {
           },
         },
       });
-
-    return _cart;
   }
 
   removeCartProduct(deleteId) {
@@ -60,9 +60,17 @@ class CartStore extends EventEmitter {
     return _cart;
   }
 
-  addNumberCart() {
-    let numberCart;
-    return numberCart + 1;
+
+  updateNumberCart() {
+    ++numberCart;
+  }
+
+  deleteNumberCart() {
+    --numberCart;
+  }
+
+  getNumberCart(){
+    return numberCart;
   }
 
   getCart() {
@@ -81,9 +89,6 @@ dispatcher.register((action) => {
       cartStore.emitChange();
       break;
     case actionTypes.DELETE_CART_ITEM:
-      cartStore.emitChange();
-      break;
-    case actionTypes.ADD_NUMBER_CART:
       cartStore.emitChange();
       break;
     default:

@@ -10,21 +10,21 @@ function AboutUs() {
           <img
             className="img__small"
             src="https://ca.slack-edge.com/T0SJKHBFZ-U013V09GQ9H-6f4454feee02-512"
-          ></img>
+          alt="Imagen Dani Alcalà"></img>
           <p>Dani Alcalà</p>
         </div>
         <div className="img__block">
           <img
             className="img__small"
             src="https://ca.slack-edge.com/T0SJKHBFZ-USCNAUTBL-e9acd67da6ce-512"
-          ></img>
+            alt="Imagen Simón Fernández"></img>
           <p>Simón Fernández</p>
         </div>
         <div className="img__block">
           <img
             className="img__small"
             src="https://ca.slack-edge.com/T0SJKHBFZ-U0106J9A473-c55b8880f483-512"
-          ></img>
+            alt="Imagen Esther Morillo"></img>
           <p>Esther Morillo</p>
         </div>
       </div>

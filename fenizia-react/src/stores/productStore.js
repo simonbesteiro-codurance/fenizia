@@ -21,6 +21,7 @@ class ProductStore extends EventEmitter {
 
   // improve code without puting true, with just one return and with ternary operator
   getProduct(criteria) {
+
     if (!criteria || criteria === 'todos') {
       return _product;
     } else if (criteria === 'novedades' || criteria === 'superventas') {
