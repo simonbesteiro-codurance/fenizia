@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductListItem.css";
 import cartStore from "../stores/cartStore";
 
-function ProductListItem({ title, id, author, price, cover, description }) {
+
+
+function ProductListItem({ title, id, author, price, cover, description, addNumberCart }) {
   function addToCart(id) {
     cartStore.addCartProduct(id);
-    addClassRenderCart()
+    addNumberCart();
   }
 
-  function addClassRenderCart() {
-    // let active = true;
-    let classNameNew = 'menu--active';
-
-    return <div className={classNameNew}>Menu</div>
-  }
 
   return (
     <div className="main-box">
@@ -35,7 +31,10 @@ function ProductListItem({ title, id, author, price, cover, description }) {
             <p className="box__vat">IVA INCLUÍDO</p>
           </div>
           <div className="box__column-button">
-            <Link onClick={() => addToCart(id)} className="box__button-cart">
+            <Link onClick={() => {
+              addToCart(id);
+    
+            }} className="box__button-cart">
               Agregar a la cesta
             </Link>
             <Link to="/" className="box__button-star">

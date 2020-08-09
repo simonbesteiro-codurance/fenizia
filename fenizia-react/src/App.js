@@ -7,16 +7,16 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import ProductList from "./components/ProductList";
-
 import Cart from "./components/Cart";
 import Register from "./components/Register";
-
 import About from "./components/About";
+import CartDisplay from "./components/CartDisplay";
 
 function App(props) {
   return (
     <div className="container">
       <Header />
+      
       <div className="margin-body">
         <Switch>
           <Route path="/" exact component={Dashboard} />
@@ -39,6 +39,7 @@ function App(props) {
           {/* <Route component={PageNotFound} /> */}
         </Switch>
       </div>
+      <CartDisplay />
       <Footer />
     </div>
   );

@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import TextInput from "./TextInput";
+import cartStore from "../stores/cartStore";
+// import TextInput from "./TextInput";
 
 function Header() {
-  const [productName, setProductName] = useState("");
+  // const [productName, setProductName] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [genre, setGenre] = useState("");
+  const [numberCart, setNumberCart] = useState(cartStore.getNumberCart());
+
+  setInterval(() => setNumberCart(cartStore.getNumberCart()), 100);
+
+  useEffect(() => {
+    cartStore.addChangeListener(onChange);
+    return () => cartStore.removeChangeListener(onChange);
+  },[])
 
   function handleClick() {
     setShowForm(true);
   }
 
+  function onChange(){
+    setNumberCart(cartStore.getNumberCart()); 
+  }
+  
   return (
     <>
       {/* {
@@ -89,7 +102,7 @@ function Header() {
           <Link to="/sobre-nosotros">SOBRE NOSOTROS</Link>
 
           <div className="categories">
-            <Link to="/productos">GÉNEROS</Link>
+            <Link>GÉNEROS</Link>
             <ul className="menu__products">
               <Link
                 onclick={() => setGenre("cocina")}
@@ -152,8 +165,11 @@ function Header() {
         <Link to={handleClick} className="icon__search"></Link>
 
         <Link to="/login" className="icon__login"></Link>
-
-        <Link to="/cart" className="icon__bag"></Link>
+        
+        <Link to="/cart" className="icon__bag">
+          <div className="icon__number">{numberCart}</div>
+        </Link>
+      
       </section>
     </>
   );

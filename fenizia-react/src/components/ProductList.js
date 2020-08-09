@@ -4,12 +4,12 @@ import productStore from "../stores/productStore";
 import genreStore from "../stores/genreStore";
 import ProductListItem from "./ProductListItem";
 import "./ProductList.css";
+import cartStore from "../stores/cartStore";
 
 function ProductList(props) {
   const [genre, setGenre] = useState(null);
-  const [products, setProducts] = useState(
-    productStore.getProductByGenre(genre)
-  );
+  const [products, setProducts] = useState(productStore.getProductByGenre(genre));
+  
 
   useEffect(() => {
     productStore.addChangeListener(onChange);
@@ -30,6 +30,12 @@ function ProductList(props) {
     setGenre(genreStore.getGenre());
   }
 
+  function addNumberCart() {
+    cartStore.updateNumberCart();
+
+  }
+
+
   return (
     <>
       {products.map((product) => (
@@ -41,6 +47,7 @@ function ProductList(props) {
           price={product.product.price}
           cover={product.product.cover}
           description={product.product.description}
+          addNumberCart={addNumberCart}
         />
       ))}
     </>
