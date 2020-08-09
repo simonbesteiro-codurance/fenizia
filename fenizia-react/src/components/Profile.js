@@ -28,7 +28,6 @@ function Profile() {
         </div>
         <div className="profile-container__image__text">
           <p> Welcome {user.name}!</p>
-          {console.log(user)}
         </div>
       </div>
       <div className="profile-container__list">
@@ -46,7 +45,7 @@ function Profile() {
             href="/profile"
             onClick={(event) => {
               event.preventDefault();
-              setShowList(<Favourite favouriteList={userStore.getUserById(1).favourites}/>);
+              setShowList(<Favourite favouriteList={user.favourites}/>);
             }}
           >
             <p>Lista de favoritos</p>

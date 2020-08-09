@@ -3,7 +3,7 @@ import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
 import userList from '../user.mock'
 const CHANGE_EVENT = "change";
-let _user = userList;
+let _user = [];
 
 class UserStore extends EventEmitter {
   addChangeListener(callback) {
@@ -23,17 +23,28 @@ class UserStore extends EventEmitter {
   }
 
   getUserById(id) {
-    return _user.find((user) => user.id === id);
+    _user= userList.find((user) => user.id === id);
+    return _user
   }
   addUser(user) {
-    _user.push({
+    userList.push({
       id: user.uid,
       name: !!user.displayname ? user.displayname : user.email,
       photo: !!user.photoURL ? user.photoURL : 'https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png',
-      cart: [2, 4, 9, 10],
+      cart: [],
       favourites:[],
     });
     return this.getUserById(user.uid);
+  }
+  addFavouriteProduct(id){
+    !_user.favourites.find((element)=>element===id) && _user.favourites.push(id);
+
+  }
+  removeFavouriteProduct(id){
+ 
+    _user.favourites=_user.favourites.filter((element)=>{console.log(element);return element!==id})
+
+
   }
 }
 
