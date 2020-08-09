@@ -6,6 +6,7 @@ import cartStore from "../stores/cartStore";
 function CartList({ title, author, id, price, cover, amount, toRender }) {
   function deleteToCart(id) {
     cartStore.removeCartProduct(id);
+    cartStore.deleteNumberCart();
     toRender();
   }
 
@@ -31,7 +32,7 @@ function CartList({ title, author, id, price, cover, amount, toRender }) {
         </p>
         <p className="flex-grow-left"></p>
         <p className="box__price--total">
-          {price * amount}
+          {Math.round((price * amount) * 100) / 100}
           <span>€</span>
         </p>
       </div>

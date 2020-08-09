@@ -4,31 +4,32 @@ import productStore from "../stores/productStore";
 import genreStore from "../stores/genreStore";
 import ProductListItem from "./ProductListItem";
 import "./ProductList.css";
+import cartStore from "../stores/cartStore";
 
 function ProductList(props) {
-  const [genre, setGenre] = useState(null);
+
+  const genre = props.match.params.genre;
   const [products, setProducts] = useState(
-    productStore.getProductByGenre(genre)
+    productStore.getProduct(genre)
   );
 
-  useEffect(() => {
-    productStore.addChangeListener(onChange);
-    const genre = props.match.params.genre;
-    setProducts(productStore.getProductByGenre(genre));
-    if (products.length === 0) loadProducts();
-    return () => productStore.removeChangeListener(onChange);
-  }, [products.length, props.match.params.genre]);
 
   useEffect(() => {
     productStore.addChangeListener(onChange);
+    setProducts(productStore.getProduct(genre));
     if (products.length === 0) loadProducts();
     return () => productStore.removeChangeListener(onChange);
-  }, [products.length]);
+  }, [products.length, genre]);
 
   function onChange() {
-    setProducts(productStore.getProductByGenre(genre));
-    setGenre(genreStore.getGenre());
+    setProducts(productStore.getProduct(genre));
   }
+
+  function addNumberCart() {
+    cartStore.updateNumberCart();
+
+  }
+
 
   return (
     <>
@@ -42,6 +43,7 @@ function ProductList(props) {
           price={product.product.price}
           cover={product.product.cover}
           description={product.product.description}
+          addNumberCart={addNumberCart}
         />
       ))}
     </>

@@ -1,5 +1,5 @@
 .ProductList__Title {
-    height: 2em;
+    height: 2rem;
     border: 2px yellow;
     background-color: #FFCC00;
     color: white;
@@ -7,4 +7,5 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 1rem;
   }
