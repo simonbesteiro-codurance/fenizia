@@ -56,6 +56,7 @@ function Login() {
                 <div data-validate="Enter password">
                   <TextInput
                     type="password"
+                    textContentType={"password"}
                     name="pass"
                     placeholder="Password"
                     value={password}

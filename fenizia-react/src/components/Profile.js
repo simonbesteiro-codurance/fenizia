@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import HistorialDePedidos from "./HistorialDePedidos";
-import ListaDeFavoritos from "./ListaDeFavoritos";
+import Favourite from "./Favourite";
 import ProductosEnVenta from "./ProductosEnVenta";
 import authStore from "../stores/authStore";
+import userStore from '../stores/userStore'
 import {} from "../user.mock";
 import "./Profile.css";
 
 function Profile() {
   const [showList, setShowList] = useState(<HistorialDePedidos />);
-  const [user] = useState(authStore.getUserProfile());
+  const [user] = useState(checkUser(authStore.getUserProfile()));
+ function checkUser(user){
+  return!!userStore.getUserById(user.uid)? userStore.getUserById(user.uid): userStore.addUser(user);
+
+ }
 
   return (
     <div className="profile-container">
@@ -16,15 +21,14 @@ function Profile() {
         <div className="profile-container__image__file">
           <img
             src={
-              !!user.photoURL
-                ? user.photoURL
-                : "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png"
+              user.photo
             }
             alt={user.displayName}
           />
         </div>
         <div className="profile-container__image__text">
-          <p>{!!user.displayName ? user.displayName : user.mail}</p>
+          <p> Welcome {user.name}!</p>
+          {console.log(user)}
         </div>
       </div>
       <div className="profile-container__list">
@@ -42,7 +46,7 @@ function Profile() {
             href="/profile"
             onClick={(event) => {
               event.preventDefault();
-              setShowList(<ListaDeFavoritos />);
+              setShowList(<Favourite favouriteList={userStore.getUserById(1).favourites}/>);
             }}
           >
             <p>Lista de favoritos</p>

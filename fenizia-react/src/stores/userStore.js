@@ -1,9 +1,9 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-
+import userList from '../user.mock'
 const CHANGE_EVENT = "change";
-let _user = [];
+let _user = userList;
 
 class UserStore extends EventEmitter {
   addChangeListener(callback) {
@@ -24,6 +24,16 @@ class UserStore extends EventEmitter {
 
   getUserById(id) {
     return _user.find((user) => user.id === id);
+  }
+  addUser(user) {
+    _user.push({
+      id: user.uid,
+      name: !!user.displayname ? user.displayname : user.email,
+      photo: !!user.photoURL ? user.photoURL : 'https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png',
+      cart: [2, 4, 9, 10],
+      favourites:[],
+    });
+    return this.getUserById(user.uid);
   }
 }
 

@@ -5,7 +5,7 @@ const userList = [
     photo:
       "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png", cart:[]
   },
-  { id: 1, name: "Esther", photo: "", cart:[2, 4, 9, 10] },
+  { id: 1, name: "Esther", photo: "", cart:[2, 4, 9, 10], favourites:[1,2,3] },
   { id: 2, name: "Simón", photo: "", cart:[] },
   { id: 3, name: "Dani", photo: "", cart:[1] },
   { id: 4, name: "Álex", photo: "", cart:[5] },

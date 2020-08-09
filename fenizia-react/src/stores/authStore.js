@@ -5,6 +5,7 @@ import actionTypes from "../actions/actionTypes";
 const CHANGE_EVENT = "change";
 let _isLogged = false;
 let _userProfile = null;
+let _errorData = null;
 
 class AuthStore extends EventEmiter {
   addChangeListener(callback) {
@@ -26,6 +27,9 @@ class AuthStore extends EventEmiter {
   getUserProfile() {
     return _userProfile;
   }
+  getSignError() {
+    return _errorData;
+  }
 }
 
 const authStore = new AuthStore();
@@ -42,6 +46,8 @@ dispatcher.register((action) => {
       _userProfile = [];
       authStore.emitChange();
       break;
+    case actionTypes.SIGN_IN:
+      _errorData = action.data;
     default:
       break;
   }

@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
 import { createSign } from "crypto";
+import productList from '../product.mock'
 
 const CHANGE_EVENT = "change";
 let _product = [];
@@ -32,7 +33,8 @@ class ProductStore extends EventEmitter {
   }
 
   getProductById(id) {
-    return _product.find((product) => product.id === id);
+    //how the _product get logic needs to be reformatted so we get the actual mock!
+    return productList.find((element) =>element.id === id.id)
   }
 
   getCarouselPage(page, step) {

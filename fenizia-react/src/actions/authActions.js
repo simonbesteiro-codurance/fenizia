@@ -37,7 +37,14 @@ export function signIn(email, password) {
     .then(() => {
       dispatcher.dispatch({
         type: actionTypes.SIGN_IN,
+        data: null,
       });
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      dispatcher.dispatch({
+        type: actionTypes.SIGN_IN,
+        data: error,
+      });
+    });
 }

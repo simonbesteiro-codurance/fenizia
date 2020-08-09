@@ -10,7 +10,7 @@ import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import Register from "./components/Register";
 import About from "./components/About";
-import CartDisplay from "./components/CartDisplay";
+
 
 function App(props) {
   return (
