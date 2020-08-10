@@ -1,6 +1,8 @@
+$backColor: white;
+
 .slider {
   height: 80vw;
-  background-color: white;
+  background-color: $backColor;
   position: relative;
 }
 

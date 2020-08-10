@@ -2,6 +2,13 @@ import productList from "../product.mock.js";
 import dispatcher from "../appDispatcher";
 import actionTypes from "./actionTypes";
 
+// export async function loadProducts() {
+//   const product = await dispatcher.dispatch({
+//     type: actionTypes.LOAD_PRODUCTS,
+//     data: product,
+//   });
+// }
+
 export function loadProducts() {
   return new Promise((resolve) => {
     resolve(productList);
@@ -13,12 +20,12 @@ export function loadProducts() {
   });
 }
 
-export function NextCarousel() {
-  return new Promise((resolve) => {
-    resolve();
-  }).then(() => {
-    dispatcher.dispatch({
-      type: actionTypes.NEXT_CAROUSEL,
-    });
-  });
-}
+// export function NextCarousel() {
+//   return new Promise((resolve) => {
+//     resolve();
+//   }).then(() => {
+//     dispatcher.dispatch({
+//       type: actionTypes.NEXT_CAROUSEL,
+//     });
+//   });
+// }
