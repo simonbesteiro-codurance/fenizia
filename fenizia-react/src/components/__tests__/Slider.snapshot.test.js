@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 import React from "react";
-import Slider from "./Slider";
+import Slider from "../Slider";
 import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Slider snapshot", () => {
