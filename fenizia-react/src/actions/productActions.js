@@ -12,13 +12,3 @@ export function loadProducts() {
     });
   });
 }
-
-export function NextCarousel() {
-  return new Promise((resolve) => {
-    resolve();
-  }).then(() => {
-    dispatcher.dispatch({
-      type: actionTypes.NEXT_CAROUSEL,
-    });
-  });
-}

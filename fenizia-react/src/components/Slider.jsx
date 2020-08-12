@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import productStore from "../stores/productStore";
 import { loadProducts } from "../actions/productActions";
-import "./Slider.css";
+import "./Slider.scss";
 
 function Slider({ order, url, text }) {
   const [products, setProducts] = useState(productStore.getProduct(order));
@@ -24,8 +24,9 @@ function Slider({ order, url, text }) {
   return (
     <section className="slider">
       <div className="slider__text">
-        
-        <Link className="slider__title" to={url}>LIBROS - {text}</Link>
+        <Link className="slider__title" to={url}>
+          LIBROS - {text}
+        </Link>
         <Link className="slider__view-all" to={url}>
           <p>VER TODO</p>
         </Link>
@@ -39,7 +40,7 @@ function Slider({ order, url, text }) {
                 alt={element.product.title}
                 className="slider__image"
                 // src= {require('../img/el-mentiroso.jpg')}
-                src = {element.product.cover}
+                src={element.product.cover}
               />
               <div key={element.id} className="slider__item-text">
                 <div key={element.id}>{element.product.title}</div>
