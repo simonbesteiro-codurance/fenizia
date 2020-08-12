@@ -7,12 +7,8 @@ import "./ProductList.css";
 import cartStore from "../stores/cartStore";
 
 function ProductList(props) {
-
   const genre = props.match.params.genre;
-  const [products, setProducts] = useState(
-    productStore.getProduct(genre)
-  );
-
+  const [products, setProducts] = useState(productStore.getProduct(genre));
 
   useEffect(() => {
     productStore.addChangeListener(onChange);
@@ -27,13 +23,12 @@ function ProductList(props) {
 
   function addNumberCart() {
     cartStore.updateNumberCart();
-
   }
-
-
   return (
     <>
-      <div className="ProductList__Title">{props.match.params.genre.toUpperCase()}</div>
+      <div className="ProductList__Title">
+        {props.match.params.genre.toUpperCase()}
+      </div>
       {products.map((product) => (
         <ProductListItem
           key={product.id}

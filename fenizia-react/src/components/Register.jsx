@@ -10,16 +10,14 @@ function Register() {
   const [signInError, setSignInError] = useState(authStore.getSignError());
   const [path, setPath] = useState("");
   function onFieldChange(value, setValue) {
-    setValue(""+value);
-
+    setValue("" + value);
   }
   function signInchecker() {
-  
     if (password) {
       signIn(email, password);
-      setPath('/login')
-    }else{
-      alert('The password hst to be 6 characters or more')
+      setPath("/login");
+    } else {
+      alert("The password hst to be 6 characters or more");
     }
     console.log(signInError);
     // fetch(signIn(email, password))
@@ -56,13 +54,12 @@ function Register() {
           </div>
           <div>
             <a href={path}>
-            <button
-              className="register-container__wrap__btn"
-              onClick={() => signInchecker()}
-            >
-              Sign in
-            </button>
-              
+              <button
+                className="register-container__wrap__btn"
+                onClick={() => signInchecker()}
+              >
+                Sign in
+              </button>
             </a>
           </div>
         </div>

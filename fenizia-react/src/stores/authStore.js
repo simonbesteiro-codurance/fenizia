@@ -37,7 +37,7 @@ const authStore = new AuthStore();
 dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOGIN:
-      _userProfile = action.user;
+      _userProfile = serializeUser(action.user);
       _isLogged = !!action.user;
       authStore.emitChange();
       break;
@@ -52,5 +52,17 @@ dispatcher.register((action) => {
       break;
   }
 });
+
+function serializeUser(user) {
+  return {
+    id: user.uid,
+    name: !!user.displayname ? user.displayname : user.email,
+    photo: !!user.photoURL
+      ? user.photoURL
+      : "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png",
+    cart: [],
+    favourites: [],
+  };
+}
 
 export default authStore;

@@ -15,7 +15,15 @@ export function loadUsers() {
 
 export function createUser(user) {
   return new Promise((resolve) => {
-    resolve(userList);
+    resolve({
+      id: user.uid,
+      name: !!user.displayname ? user.displayname : user.email,
+      photo: !!user.photoURL
+        ? user.photoURL
+        : "https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png",
+      cart: [],
+      favourites: [],
+    });
   }).then((user) => {
     dispatcher.dispatch({
       type: actionTypes.CREATE_USER,

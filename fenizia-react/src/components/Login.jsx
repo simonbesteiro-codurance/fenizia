@@ -16,9 +16,11 @@ function Login() {
 
     return () => authStore.removeChangeListener(onAuthChange);
   }, [isLogged, user]);
+
   function onFieldChange(value, setValue) {
     setValue(value);
   }
+
   function onAuthChange() {
     setIsLogged(authStore.isLogged());
     setUser(authStore.getUserProfile());
@@ -88,7 +90,7 @@ function Login() {
           <button className="logout-btn" onClick={() => logout()}>
             Logout
           </button>
-          <Profile />
+          <Profile user={user} />
         </>
       )}
     </>

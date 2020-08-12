@@ -1,7 +1,8 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import userList from '../user.mock'
+import userList from "../user.mock";
+
 const CHANGE_EVENT = "change";
 let _user = [];
 
@@ -19,32 +20,26 @@ class UserStore extends EventEmitter {
   }
 
   getUser() {
+    console.log(_user);
     return _user;
   }
 
   getUserById(id) {
-    _user= userList.find((user) => user.id === id);
-    return _user
+    _user = userList.find((user) => user.id === id);
+    return _user;
   }
   addUser(user) {
-    userList.push({
-      id: user.uid,
-      name: !!user.displayname ? user.displayname : user.email,
-      photo: !!user.photoURL ? user.photoURL : 'https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png',
-      cart: [],
-      favourites:[],
-    });
     return this.getUserById(user.uid);
   }
-  addFavouriteProduct(id){
-    !_user.favourites.find((element)=>element===id) && _user.favourites.push(id);
-
+  addFavouriteProduct(id) {
+    !_user.favourites.find((element) => element === id) &&
+      _user.favourites.push(id);
   }
-  removeFavouriteProduct(id){
- 
-    _user.favourites=_user.favourites.filter((element)=>{console.log(element);return element!==id})
-
-
+  removeFavouriteProduct(id) {
+    _user.favourites = _user.favourites.filter((element) => {
+      console.log(element);
+      return element !== id;
+    });
   }
 }
 
@@ -53,19 +48,20 @@ dispatcher.register((action) => {
   switch (action.type) {
     case actionTypes.LOAD_USER:
       _user = action.data;
-      userStore.emitChange(_user);
+      userStore.emitChange();
       break;
     case actionTypes.CREATE_USER:
-      _user = [..._user, action.data];
+      userList = [...userList, action.data];
+      console.log(userList);
       userStore.emitChange();
       break;
     case actionTypes.UPDATE_USER:
       _user = action.data;
-      userStore.emitChange(_user);
+      userStore.emitChange();
       break;
     case actionTypes.DELETE_USER:
       _user = action.data;
-      userStore.emitChange(_user);
+      userStore.emitChange();
       break;
     default:
       break;
